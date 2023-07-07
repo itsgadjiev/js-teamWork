@@ -189,21 +189,86 @@
         </div>
     </div>
 
-    <div class="admin-panel-section d-none">
-        <div class="admin-panel-wrapper">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col"># </th>
-                        <th scope="col">Product Name <span class="name-order">></span></th>
-                        <th scope="col">Surname <span class="surname-order">></span></th>
-                        <th scope="col">Salary <span class="salary-order">></span></th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider table-inner">
+    <div class="admin-panel-section">
+        <div class="admin-panel-wrapper container">
+            <h1 class="text-center pb-5">Admin Panel</h1>
+            <div class="ad-inputs-wrapper">
+                <div class="input-group ">
+                    <!-- <span class="input-group-text">Name and Category and Price and
+                        Photo</span> -->
+                    <input placeholder="Product Name" type="text" class="form-control pName-input">
+                    <input placeholder="Product Category" type="text" class="form-control pCat-input">
+                    <input placeholder="Product Price" type="number" class="form-control pPrice-input">
+                    <input placeholder="Product Photo" type="text" class="form-control pImage-input">
+                    <button class="btn btn-primary add-btn">Add</button>
+                </div>
+            </div>
 
-                </tbody>
-            </table>
+
+            <div class="ap-filter-table-section d-flex pt-5">
+                <div class="col-2">
+                    <div class="filters-wrapper">
+
+                        <div class="filters-wrapper-inner">
+                            <div class="filters-wrapper-inner-input">
+                                <h6>Name Filter</h6>
+                                <input type="text" placeholder="Filter for name" class="pName-filter ap-filter-inputs">
+                            </div>
+
+                            <div class="filters-wrapper-inner-input">
+                                <h6>Category Filter</h6>
+                                <input type="text" placeholder="Filter for category"
+                                    class="pCat-filter ap-filter-inputs">
+                            </div>
+                            <div class="filters-wrapper-inner-input">
+                                <h6>Price Filter</h6>
+                                <input type="text" placeholder="Filter for Price" class="name-filter ap-filter-inputs">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-10">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"># </th>
+                                <th scope="col">Product Name <span class="pName-order">></span></th>
+                                <th scope="col">Category <span class="pCat-order">></span></th>
+                                <th scope="col">Price <span class="pPrice-order">></span></th>
+                                <th scope="col">Photo </th>
+                                <th scope="col">Actions </th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider table-inner">
+                            <tr>
+                                <th scope="row">${element.id}</th>
+                                <td> <input type="text" value="${element.name}" class="nonbordered-input" readonly></td>
+                                <td><input type="text" value="${element.surname}" class="nonbordered-input" readonly>
+                                </td>
+                                <td><input type="text" value="${element.salary}" class="nonbordered-input" readonly>
+                                </td>
+                                <td>
+                                    <div class="ap-item-photo">
+                                        <img src="./assets/images/${element.image}" alt="">
+                                    </div>
+                                    <div class="ap-item-image-string">
+                                        <input type="hidden" value="${element.image}" class="nonbordered-input"
+                                            readonly>
+                                    </div>
+                                </td>
+                                <td><button class="btn btn-danger" value="${element.id}">Delete</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
         </div>
     </div>
 

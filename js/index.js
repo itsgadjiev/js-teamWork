@@ -1,11 +1,6 @@
 // @ts-nocheck
 
 
-
-
-// const nameInput = document.querySelector('.name-input');
-// const surnameInput = document.querySelector('.surname-input');
-// const salaryInput = document.querySelector('.salary-input');
 // const addBtn = document.querySelector('.add-btn');
 // const tableInner = document.querySelector('.table-inner');
 // const nameFilterInput = document.querySelector('.name-filter');
@@ -20,10 +15,11 @@
 // let surnameCounter = 0;
 // let ageCounter = 0;
 
+
+//////////////////////////////////////////////////////////////
 const adminPanelBtn = document.querySelector('.admin-panel');
 const cardSectionWrapper = document.querySelector('.fully-wrappered-cards-section');
 const adminPanelWrapper = document.querySelector('.admin-panel-section');
-
 
 adminPanelBtn.addEventListener('click', () => {
     console.log();
@@ -31,28 +27,44 @@ adminPanelBtn.addEventListener('click', () => {
     adminPanelWrapper.classList.remove('d-none');
 
 })
+/////////////////////////////////////////////////
+
+const pNameInput = document.querySelector('.pName-input');
+const pCatInput = document.querySelector('.pCat-input');
+const pPriceInput = document.querySelector('.pPrice-input');
+const pImageinput = document.querySelector('.pImage-input');
+const addBtn = document.querySelector('.add-btn');
 
 
+const items = [];
+let itemId = 1;
 
+function addToTable() {
+    localStorage.setItem('itemId', itemId);
+    const inputElement = {
+        id: Number(localStorage.getItem('itemId')),
+        name: pNameInput.value,
+        category: pCatInput.value,
+        price: pPriceInput.value,
+        Image: pImageinput.value
+    };
+    items.push(inputElement);
+    localStorage.setItem('myArray', JSON.stringify(items));
+    localStorage.setItem('itemId', itemId);
+    itemId += 1;
+    pNameInput.value = '';
+    pCatInput.value = '';
+    pPriceInput.value = '';
+    pImageinput.value = '';
 
-// const datas = [];
+    // filterData();
+}
 
+function eventListeners() {
+    addBtn.addEventListener('click', addToTable)
+}
 
-
-
-// function addToTable() {
-//     const inputElement = {
-//         name: nameInput.value,
-//         surname: surnameInput.value,
-//         salary: salaryInput.value
-//     };
-//     datas.push(inputElement);
-
-//     nameInput.value = '';
-//     surnameInput.value = '';
-//     salaryInput.value = '';
-//     filterData();
-// }
+eventListeners();
 
 
 
@@ -233,6 +245,10 @@ adminPanelBtn.addEventListener('click', () => {
 // function removeFilters() {
 
 //     tableInner.innerHTML = '';
+//     pNameInput.value = '';
+//     pCatInput.value = '';
+//     pPriceInput.value = '';
+//     pImageinput.value = '';
 //     console.log("salam");
 //     datas.forEach((element, idx) => {
 //         tableInner.innerHTML += `<tr>
@@ -242,7 +258,6 @@ adminPanelBtn.addEventListener('click', () => {
 //           <td>${element.salary}</td>
 //         </tr>`;
 //     });
-
 // }
 
 // function eventListeners() {
