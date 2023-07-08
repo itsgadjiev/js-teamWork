@@ -1,81 +1,172 @@
-.thirdMain {
-    height: 500px;           
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+@media only screen and (min-width: 750px) {
 
-    .boxesOfThirdMain {
-        height: 500px;
-        width: 30%;
-
-        .boxOfProductImg {
-            height: 380px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            a {
-                img {
-                    height: 100%;
-                    width: 100%;
-                    transition: all 0.5s ease;
-                }
-                img:hover {
-                    transform: scale(1.1);
-                    
-                }
-                img:hover:not(:hover) {
-                    height: 100%;
-                    width: 100%;
-                }
-            }
-        }
-        
-
-        .boxOfProductName{
-            height: 50px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            a {
-                text-decoration: none;
-                height: 50px;
-
-                p {
-                    color: black;
-                    height: 10px;
+    .thirdMain {
+        height: 500px;           
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    
+        .boxesOfThirdMain {
+            height: 500px;
+            width: 30%;
+    
+            .boxOfProductImg {
+                height: 380px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+                a {
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        transition: all 0.5s ease;
+                    }
+                    img:hover {
+                        transform: scale(1.1);
+                        
+                    }
+                    img:hover:not(:hover) {
+                        height: 100%;
+                        width: 100%;
+                    }
                 }
             }
             
-        }
-
-        .boxOfProductNotice{
-            height: 50px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            a {
-                color: black;
-
-                p {
+    
+            .boxOfProductName{
+                height: 50px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+                a {
+                    text-decoration: none;
+                    height: 50px;
+    
+                    p {
+                        color: black;
+                        height: 10px;
+                        width: 100%;
+                    }
+                }
+                
+            }
+    
+            .boxOfProductNotice{
+                height: 50px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+                a {
                     color: black;
+    
+                    p {
+                        color: black;
+                    }
+                }
+            }
+            .boxOfProductNotice:hover {
+                a {
+                    color: rgba(58, 54, 54, 0.377);
+    
+                    p {
+                        color: rgba(58, 54, 54, 0.377);
+                    }
                 }
             }
         }
-        .boxOfProductNotice:hover {
-            a {
-                color: rgba(58, 54, 54, 0.377);
+    }
+}
 
-                p {
+@media only screen and (max-width: 750px) {
+    .thirdMain {
+
+        height: 1800px;  
+        width: 100%;         
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+
+        .boxesOfThirdMain {
+            height: 33.33%;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+
+            .boxOfProductImg {
+                height: 100%;
+                width: 100%;
+                a {
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        transition: all 0.5s ease;
+                    }
+                    img:hover {
+                        transform: scale(1.1);
+                        
+                    }
+                    img:hover:not(:hover) {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+            
+    
+            .boxOfProductName{
+                height: 50px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+                a {
+                    text-decoration: none;
+                    height: 50px;
+    
+                    p {
+                        color: black;
+                        height: 10px;
+                        width: 100%;
+                    }
+                }
+                
+            }
+    
+            .boxOfProductNotice{
+                height: 50px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+                a {
+                    color: black;
+    
+                    p {
+                        color: black;
+                    }
+                }
+            }
+            .boxOfProductNotice:hover {
+                a {
                     color: rgba(58, 54, 54, 0.377);
+    
+                    p {
+                        color: rgba(58, 54, 54, 0.377);
+                    }
                 }
             }
         }

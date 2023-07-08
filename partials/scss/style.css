@@ -1,264 +1,432 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /*ready code*/
+@media only screen and (min-width: 750px) {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*ready code*/
+  }
+  body .textStyleOfProduct {
+    font-size: 15px;
+  }
+  body main {
+    height: 1060px;
+    width: 90%;
+  }
+  body main .secondMain {
+    height: 550px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  body main .secondMain .boxesOfSecondMain {
+    height: 536px;
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body main .secondMain .boxesOfSecondMain .boxOfProductImg {
+    height: 448px;
+    width: 100%;
+  }
+  body main .secondMain .boxesOfSecondMain .boxOfProductImg a img {
+    height: 100%;
+    width: 100%;
+  }
+  body main .secondMain .boxesOfSecondMain .boxOfProductName {
+    height: 72px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body main .secondMain .boxesOfSecondMain .boxOfProductName a {
+    text-decoration: none;
+  }
+  body main .secondMain .boxesOfSecondMain .boxOfProductName a p {
+    color: black;
+  }
 }
-body .textStyleOfProduct {
-  font-size: 15px;
+@media only screen and (max-width: 750px) {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*ready code*/
+  }
+  body .textStyleOfProduct {
+    font-size: 15px;
+  }
+  body main {
+    height: 2900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+  }
+  body main .secondMain {
+    height: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body main .secondMain .boxesOfSecondMain {
+    height: 33.33%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body main .secondMain .boxesOfSecondMain .boxOfProductImg {
+    height: 60%;
+    width: 100%;
+  }
+  body main .secondMain .boxesOfSecondMain .boxOfProductImg a img {
+    height: 100%;
+    width: 100%;
+  }
+  body main .secondMain .boxesOfSecondMain .boxOfProductName {
+    height: 72px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body main .secondMain .boxesOfSecondMain .boxOfProductName a {
+    text-decoration: none;
+  }
+  body main .secondMain .boxesOfSecondMain .boxOfProductName a p {
+    color: black;
+    font-size: 14px;
+  }
 }
-body main {
-  height: 1060px;
-  width: 90%;
+@media only screen and (min-width: 750px) {
+  .thirdMain {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .thirdMain .boxesOfThirdMain {
+    height: 500px;
+    width: 30%;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductImg {
+    height: 380px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductImg a img {
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductImg a img:hover {
+    transform: scale(1.1);
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductImg a img:hover:not(:hover) {
+    height: 100%;
+    width: 100%;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductName {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductName a {
+    text-decoration: none;
+    height: 50px;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductName a p {
+    color: black;
+    height: 10px;
+    width: 100%;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductNotice {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductNotice a {
+    color: black;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductNotice a p {
+    color: black;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductNotice:hover a {
+    color: rgba(58, 54, 54, 0.377);
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductNotice:hover a p {
+    color: rgba(58, 54, 54, 0.377);
+  }
 }
-body main .secondMain {
-  height: 550px;
-  display: flex;
-  flex-direction: row;
+@media only screen and (max-width: 750px) {
+  .thirdMain {
+    height: 1800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+  }
+  .thirdMain .boxesOfThirdMain {
+    height: 33.33%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductImg {
+    height: 100%;
+    width: 100%;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductImg a img {
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductImg a img:hover {
+    transform: scale(1.1);
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductImg a img:hover:not(:hover) {
+    height: 100%;
+    width: 100%;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductName {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductName a {
+    text-decoration: none;
+    height: 50px;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductName a p {
+    color: black;
+    height: 10px;
+    width: 100%;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductNotice {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductNotice a {
+    color: black;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductNotice a p {
+    color: black;
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductNotice:hover a {
+    color: rgba(58, 54, 54, 0.377);
+  }
+  .thirdMain .boxesOfThirdMain .boxOfProductNotice:hover a p {
+    color: rgba(58, 54, 54, 0.377);
+  }
 }
-body main .secondMain .boxesOfSecondMain {
-  height: 536px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@media only screen and (min-width: 750px) {
+  footer {
+    height: 621px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .firstSection {
+    margin: 150px 0 0 100px;
+    height: 198px;
+    width: 80%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  footer .firstSection .firstSectionBoxes {
+    height: 198px;
+    width: 20%;
+  }
+  footer .firstSection .firstSectionBoxes h3 {
+    font-size: 12px;
+    margin-left: 32px;
+    width: 100%;
+  }
+  footer .firstSection .firstSectionBoxes li a {
+    text-decoration: none;
+    color: rgb(119, 119, 119);
+    width: 100%;
+  }
+  footer .firstSection .firstSectionBoxes a:hover {
+    text-decoration: underline;
+  }
+  footer .firstSection .firstSectionBoxes ul li {
+    list-style-type: none;
+    height: 23px;
+    width: 100%;
+  }
+  footer .firstSection .firstSectionBoxes .socialMediaIcons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: -10px 0 0 -33px;
+  }
+  footer .firstSection .fifthBox {
+    display: flex;
+    align-items: center;
+  }
+  footer .firstSection .fifthBox a {
+    text-decoration: none;
+    color: black;
+  }
+  footer .firstSection .fifthBox a:hover {
+    text-decoration: none;
+    color: black;
+  }
+  footer .firstSection .fifthBox .boxInFifthBox:hover {
+    background-color: rgb(230, 229, 229);
+    border-radius: 2px;
+  }
+  footer .firstSection .fifthBox .boxInFifthBox {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer .firstSection .fifthBox .boxInFifthBox .h3Box {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer .firstSection .fifthBox .boxInFifthBox .h3Box h3 {
+    margin-left: 10px;
+    font-size: 10px;
+  }
+  footer .firstSection .fifthBox .boxInFifthBox .pBox {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer .firstSection .fifthBox .boxInFifthBox .pBox p {
+    margin-left: 8px;
+    font-size: 12px;
+  }
+  footer .firstSection .fifthBox .boxInFifthBox .firstTextContinue {
+    margin-top: -28px;
+  }
+  footer .firstSection .fifthBox .boxInFifthBox .secondTextContinue {
+    margin-top: -45px;
+    text-decoration: underline;
+  }
+  footer .secondSection {
+    height: 26px;
+    width: 500px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  footer .secondSection ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-left: -35px;
+  }
+  footer .secondSection ul li {
+    height: 25px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+  }
+  footer .secondSection ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  footer .secondSection ul .secondLi {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
+  footer .thirdSection {
+    width: 200px;
+    height: 30px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+  }
+  footer .thirdSection img {
+    height: 100%;
+    width: 100%;
+  }
+  footer .fourthSection {
+    height: 92px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .fourthSection p {
+    height: 20px;
+    font-size: 11px;
+    color: rgb(82, 81, 81);
+  }
+  footer .fourthSection p a {
+    color: black;
+    font-size: 11.5px;
+  }
 }
-body main .secondMain .boxesOfSecondMain .boxOfProductImg {
-  height: 448px;
-  width: 448px;
-}
-body main .secondMain .boxesOfSecondMain .boxOfProductImg a img {
-  height: 100%;
-  width: 100%;
-}
-body main .secondMain .boxesOfSecondMain .boxOfProductName {
-  height: 72px;
-  width: 448px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body main .secondMain .boxesOfSecondMain .boxOfProductName a {
-  text-decoration: none;
-}
-body main .secondMain .boxesOfSecondMain .boxOfProductName a p {
-  color: black;
-}
-
-.thirdMain {
-  height: 500px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.thirdMain .boxesOfThirdMain {
-  height: 500px;
-  width: 30%;
-}
-.thirdMain .boxesOfThirdMain .boxOfProductImg {
-  height: 380px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.thirdMain .boxesOfThirdMain .boxOfProductImg a img {
-  height: 100%;
-  width: 100%;
-  transition: all 0.5s ease;
-}
-.thirdMain .boxesOfThirdMain .boxOfProductImg a img:hover {
-  transform: scale(1.1);
-}
-.thirdMain .boxesOfThirdMain .boxOfProductImg a img:hover:not(:hover) {
-  height: 100%;
-  width: 100%;
-}
-.thirdMain .boxesOfThirdMain .boxOfProductName {
-  height: 50px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.thirdMain .boxesOfThirdMain .boxOfProductName a {
-  text-decoration: none;
-  height: 50px;
-}
-.thirdMain .boxesOfThirdMain .boxOfProductName a p {
-  color: black;
-  height: 10px;
-}
-.thirdMain .boxesOfThirdMain .boxOfProductNotice {
-  height: 50px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.thirdMain .boxesOfThirdMain .boxOfProductNotice a {
-  color: black;
-}
-.thirdMain .boxesOfThirdMain .boxOfProductNotice a p {
-  color: black;
-}
-.thirdMain .boxesOfThirdMain .boxOfProductNotice:hover a {
-  color: rgba(58, 54, 54, 0.377);
-}
-.thirdMain .boxesOfThirdMain .boxOfProductNotice:hover a p {
-  color: rgba(58, 54, 54, 0.377);
-}
-
-footer {
-  height: 621px;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-footer .firstSection {
-  margin-top: 150px;
-  height: 198px;
-  width: 1100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-footer .firstSection .firstSectionBoxes {
-  height: 198px;
-  width: 196px;
-}
-footer .firstSection .firstSectionBoxes h3 {
-  font-size: 12px;
-  margin-left: 32px;
-}
-footer .firstSection .firstSectionBoxes li a {
-  text-decoration: none;
-  color: rgb(119, 119, 119);
-}
-footer .firstSection .firstSectionBoxes a:hover {
-  text-decoration: underline;
-}
-footer .firstSection .firstSectionBoxes ul li {
-  list-style-type: none;
-}
-footer .firstSection .firstSectionBoxes .socialMediaIcons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: -10px 0 0 -33px;
-}
-footer .firstSection .fifthBox {
-  display: flex;
-  align-items: center;
-}
-footer .firstSection .fifthBox a {
-  text-decoration: none;
-  color: black;
-}
-footer .firstSection .fifthBox a:hover {
-  text-decoration: none;
-  color: black;
-}
-footer .firstSection .fifthBox .boxInFifthBox:hover {
-  background-color: rgb(230, 229, 229);
-  border-radius: 2px;
-}
-footer .firstSection .fifthBox .boxInFifthBox {
-  height: 60%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-footer .firstSection .fifthBox .boxInFifthBox .h3Box {
-  height: 40px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-footer .firstSection .fifthBox .boxInFifthBox .h3Box h3 {
-  margin-left: 10px;
-  font-size: 10px;
-}
-footer .firstSection .fifthBox .boxInFifthBox .pBox {
-  height: 45px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-footer .firstSection .fifthBox .boxInFifthBox .pBox p {
-  margin-left: 8px;
-  font-size: 12px;
-}
-footer .firstSection .fifthBox .boxInFifthBox .firstTextContinue {
-  margin-top: -28px;
-}
-footer .firstSection .fifthBox .boxInFifthBox .secondTextContinue {
-  margin-top: -45px;
-  text-decoration: underline;
-}
-footer .secondSection {
-  height: 26px;
-  width: 500px;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-}
-footer .secondSection ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  margin-left: -35px;
-}
-footer .secondSection ul li {
-  height: 25px;
-  width: 150px;
-  display: flex;
-  justify-content: center;
-}
-footer .secondSection ul li a {
-  text-decoration: none;
-  color: black;
-}
-footer .secondSection ul .secondLi {
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-}
-footer .thirdSection {
-  width: 200px;
-  height: 30px;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-}
-footer .thirdSection img {
-  height: 100%;
-  width: 100%;
-}
-footer .fourthSection {
-  height: 92px;
-  width: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-footer .fourthSection p {
-  height: 20px;
-  font-size: 11px;
-  color: rgb(82, 81, 81);
-}
-footer .fourthSection p a {
-  color: black;
-  font-size: 11.5px;
+@media only screen and (max-width: 750px) {
+  footer {
+    border: 1px solid black;
+  }
+  footer .firstSectionBoxes {
+    border: 1px solid black;
+  }
+  footer .firstSectionBoxes li {
+    list-style-type: none;
+    margin-left: -30px;
+  }
+  footer .firstSectionBoxes li a {
+    text-decoration: none;
+    color: rgb(119, 119, 119);
+  }
+  footer .firstSectionBoxes p {
+    margin-left: -30px;
+  }
+  footer .socialMediaIcons {
+    display: flex;
+    flex-direction: row;
+    margin-left: -60px;
+  }
+  footer .socialMediaIcons li {
+    list-style-type: none;
+    margin-left: 0px;
+  }
 }/*# sourceMappingURL=style.css.map */
