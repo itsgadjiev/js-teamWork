@@ -10,7 +10,6 @@
             margin: 150px 0 0 100px;
             height: 198px;
             width: 80%;
-            border: 1px solid black;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -51,66 +50,57 @@
     
             
             .fifthBox {
-                display: flex;
-                align-items: center;
-    
+                height: 100px;
+                width: 250px;
+                border: 1px solid rgb(119, 119, 119);
+                a:hover {
+                    text-decoration:none;
+                }
                 a {
                     text-decoration: none;
                     color: black;
-                }
-                a:hover {
-                    text-decoration: none;
-                    color: black;
-                }
-                
-                .boxInFifthBox:hover {
-                    background-color: rgb(230, 229, 229);
-                    border-radius: 2px;
-                }
-               
-                .boxInFifthBox {
-                    height: 60%;
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    
-                    .h3Box {
-                        height: 40px;
+                    .boxInFifthBox {
+                        height: 100%;
                         width: 100%;
                         display: flex;
                         flex-direction: column;
-                        justify-content: center;
-                    
-                        h3 {
-                            margin-left: 10px;
-                            font-size: 10px;
+
+                        .h3Box {
+                            height: 60%;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            margin: 0 0 0px;
+
+                            h3 {
+                                width: 150px;
+                                font-size: 14px;
+                                display: inline-flex; 
+                                margin-left: 42px; 
+                                                        
+                            }
+                            .firstText {
+                                margin-top: 10px;
+                            }
                         }
-                    }
-        
-                    .pBox {
-                        height: 45px;
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-        
-                        p {
-                            margin-left: 8px;
-                            font-size: 12px;
+                        .pBox {
+                            height: 40%;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+
+                            h4 {
+                                font-size: 15px;
+                                margin: 10px 0 0 10px;
+                                color: rgb(119, 119, 119);;;                              
+                            }
+                            .secondTextContinue {
+                                text-decoration: underline;
+                            }                           
                         }
-                    }  
-                    .firstTextContinue {
-                        margin-top: -28px;
-                    }
-                    .secondTextContinue {
-                        margin-top: -45px;
-                        text-decoration: underline;
                     }
                 }
-    
-                
-            }
+            }           
         }
     
         .secondSection {

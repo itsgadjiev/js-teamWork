@@ -256,7 +256,6 @@
     margin: 150px 0 0 100px;
     height: 198px;
     width: 80%;
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -290,55 +289,51 @@
     margin: -10px 0 0 -33px;
   }
   footer .firstSection .fifthBox {
-    display: flex;
-    align-items: center;
+    height: 100px;
+    width: 250px;
+    border: 1px solid rgb(119, 119, 119);
+  }
+  footer .firstSection .fifthBox a:hover {
+    text-decoration: none;
   }
   footer .firstSection .fifthBox a {
     text-decoration: none;
     color: black;
   }
-  footer .firstSection .fifthBox a:hover {
-    text-decoration: none;
-    color: black;
+  footer .firstSection .fifthBox a .boxInFifthBox {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
-  footer .firstSection .fifthBox .boxInFifthBox:hover {
-    background-color: rgb(230, 229, 229);
-    border-radius: 2px;
-  }
-  footer .firstSection .fifthBox .boxInFifthBox {
+  footer .firstSection .fifthBox a .boxInFifthBox .h3Box {
     height: 60%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    margin: 0 0 0px;
   }
-  footer .firstSection .fifthBox .boxInFifthBox .h3Box {
-    height: 40px;
+  footer .firstSection .fifthBox a .boxInFifthBox .h3Box h3 {
+    width: 150px;
+    font-size: 14px;
+    display: inline-flex;
+    margin-left: 42px;
+  }
+  footer .firstSection .fifthBox a .boxInFifthBox .h3Box .firstText {
+    margin-top: 10px;
+  }
+  footer .firstSection .fifthBox a .boxInFifthBox .pBox {
+    height: 40%;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
   }
-  footer .firstSection .fifthBox .boxInFifthBox .h3Box h3 {
-    margin-left: 10px;
-    font-size: 10px;
+  footer .firstSection .fifthBox a .boxInFifthBox .pBox h4 {
+    font-size: 15px;
+    margin: 10px 0 0 10px;
+    color: rgb(119, 119, 119);
   }
-  footer .firstSection .fifthBox .boxInFifthBox .pBox {
-    height: 45px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  footer .firstSection .fifthBox .boxInFifthBox .pBox p {
-    margin-left: 8px;
-    font-size: 12px;
-  }
-  footer .firstSection .fifthBox .boxInFifthBox .firstTextContinue {
-    margin-top: -28px;
-  }
-  footer .firstSection .fifthBox .boxInFifthBox .secondTextContinue {
-    margin-top: -45px;
+  footer .firstSection .fifthBox a .boxInFifthBox .pBox .secondTextContinue {
     text-decoration: underline;
   }
   footer .secondSection {
