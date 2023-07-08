@@ -1,7 +1,6 @@
 // @ts-nocheck
 
 
-const tableInner = document.querySelector('.table-inner');
 
 // const nameSort = document.querySelector('.name-order');
 // const surnameSort = document.querySelector('.surname-order');
@@ -15,16 +14,17 @@ const tableInner = document.querySelector('.table-inner');
 //////////////////////////////////////////////////////////////
 const adminPanelBtn = document.querySelector('.admin-panel');
 const cardSectionWrapper = document.querySelector('.fully-wrappered-cards-section');
-const adminPanelWrapper = document.querySelector('.admin-panel-section');
+const adminPanelWrapper = document.querySelector('.admin-panel-section ');
 
 adminPanelBtn.addEventListener('click', () => {
     console.log();
-    cardSectionWrapper.classList.add('d-none');
-    adminPanelWrapper.classList.remove('d-none');
+    cardSectionWrapper.classList.toggle('d-none');
+    adminPanelWrapper.classList.toggle('d-none');
 
 })
 /////////////////////////////////////////////////
 
+const tableInner = document.querySelector('.table-inner');
 const pNameInput = document.querySelector('.pName-input');
 const pCatInput = document.querySelector('.pCat-input');
 const pPriceInput = document.querySelector('.pPrice-input');
@@ -63,20 +63,27 @@ function addToTable() {
     pCatInput.value = '';
     pPriceInput.value = '';
     pImageinput.value = '';
-    filterData();
+    showData(filterTheDataForAp());
 
 }
 
 function eventListeners() {
     addBtn.addEventListener('click', addToTable)
-    pNameFilter.addEventListener('input', filterData);
-    pCatFilter.addEventListener('input', filterData);
-    pMinPriceFilter.addEventListener('input', filterData);
-    pMaxPriceFilter.addEventListener('input', filterData);
+    pNameFilter.addEventListener('input', () => {
+        showData(filterTheDataForAp())
+    });
+    pCatFilter.addEventListener('input', () => {
+        showData(filterTheDataForAp())
+    });
+    pMinPriceFilter.addEventListener('input', () => {
+        showData(filterTheDataForAp())
+    });
+    pMaxPriceFilter.addEventListener('input', () => {
+        showData(filterTheDataForAp())
+    });
 }
 
-filterData();
-eventListeners();
+
 
 function getArrFromLocalStorage(key) {
     const localStoregaItemArr = localStorage.getItem(`${key}`);
@@ -86,8 +93,7 @@ function getArrFromLocalStorage(key) {
     return items;
 }
 
-
-function filterData() {
+function filterTheDataForAp() {
     const nameFilterValue = pNameFilter.value.toLowerCase();
     const catFilterValue = pCatFilter.value.toLowerCase();
     const minPriceFilterValue = pMinPriceFilter.value;
@@ -107,10 +113,28 @@ function filterData() {
             (maxPriceFilterValue === '' || price <= Number(maxPriceFilterValue));
 
         return nameMatch && categoryMatch && salaryMatch;
+
     });
 
-    tableInner.innerHTML = '';
+    return filteredData;
+}
 
+//////////////////////////////////////////////////////
+
+const itemCounter = document.querySelector('.item-counter');
+
+
+function showDataForSelling(callback) {
+    const filteredData = callback;
+    tableInner.innerHTML = '';
+    filteredData.forEach((element) => {
+        tableInner.innerHTML += ``;
+    });
+}
+///////////////////////////////////////////////////////
+function showData(callback) {
+    const filteredData = callback;
+    tableInner.innerHTML = '';
     filteredData.forEach((element) => {
         tableInner.innerHTML += ` <tr>
         <th scope="row">${element.id}</th>
@@ -121,7 +145,7 @@ function filterData() {
         </td>
         <td>
             <div class="ap-item-photo">
-                <img src="./assets/images/${element.image}" alt="">
+                <img src="./assets/images/${element.Image + ".jpg"}" alt="">
             </div>
             <div class="ap-item-image-string">
                 <input type="hidden" value="${element.id}" class="nonbordered-input"
@@ -132,6 +156,12 @@ function filterData() {
     </tr>`;
     });
 }
+
+
+eventListeners();
+showData(filterTheDataForAp());
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 // //sort kodlari oz beynimin mehsulu deyil :D
 // //counteri ozum elemishem bilirem bele yazmaq duzgun deyil amma ki togle effecti yaratmaq ucun kreativlik :D
