@@ -1,12 +1,8 @@
 // @ts-nocheck
 
 
-// const addBtn = document.querySelector('.add-btn');
-// const tableInner = document.querySelector('.table-inner');
-// const nameFilterInput = document.querySelector('.name-filter');
-// const surnameFilterInput = document.querySelector('.surname-filter');
-// const salaryMinFilterInput = document.querySelector('.salary-min-filter');
-// const salaryMaxFilterInput = document.querySelector('.salary-max-filter');
+const tableInner = document.querySelector('.table-inner');
+
 // const nameSort = document.querySelector('.name-order');
 // const surnameSort = document.querySelector('.surname-order');
 // const salarySort = document.querySelector('.salary-order');
@@ -33,72 +29,109 @@ const pNameInput = document.querySelector('.pName-input');
 const pCatInput = document.querySelector('.pCat-input');
 const pPriceInput = document.querySelector('.pPrice-input');
 const pImageinput = document.querySelector('.pImage-input');
+
+const pNameFilter = document.querySelector('.pName-filter');
+const pCatFilter = document.querySelector('.pCat-filter');
+const pMinPriceFilter = document.querySelector('.p-min-price-filter');
+const pMaxPriceFilter = document.querySelector('.p-max-price-filter');
+
 const addBtn = document.querySelector('.add-btn');
 
 
-const items = [];
-let itemId = 1;
+let items = [];
+let itemId;
 
 function addToTable() {
-    localStorage.setItem('itemId', itemId);
+    let itemIdInLocal = localStorage.getItem('itemId');
+    if (itemIdInLocal) {
+        itemId = Number(localStorage.getItem('itemId'));
+    } else {
+        itemId = 1;
+    }
     const inputElement = {
-        id: Number(localStorage.getItem('itemId')),
+        id: Number(itemId),
         name: pNameInput.value,
         category: pCatInput.value,
         price: pPriceInput.value,
         Image: pImageinput.value
     };
     items.push(inputElement);
-    localStorage.setItem('myArray', JSON.stringify(items));
-    localStorage.setItem('itemId', itemId);
+    localStorage.setItem('products', JSON.stringify(items));
     itemId += 1;
+    localStorage.setItem('itemId', itemId);
     pNameInput.value = '';
     pCatInput.value = '';
     pPriceInput.value = '';
     pImageinput.value = '';
+    filterData();
 
-    // filterData();
 }
 
 function eventListeners() {
     addBtn.addEventListener('click', addToTable)
+    pNameFilter.addEventListener('input', filterData);
+    pCatFilter.addEventListener('input', filterData);
+    pMinPriceFilter.addEventListener('input', filterData);
+    pMaxPriceFilter.addEventListener('input', filterData);
 }
 
+filterData();
 eventListeners();
 
+function getArrFromLocalStorage(key) {
+    const localStoregaItemArr = localStorage.getItem(`${key}`);
+    if (localStoregaItemArr) {
+        items = JSON.parse(localStoregaItemArr);
+    }
+    return items;
+}
 
 
-// function filterData() {
-//     const nameFilterValue = nameFilterInput.value.toLowerCase();
-//     const surnameFilterValue = surnameFilterInput.value.toLowerCase();
-//     const minSalaryFilterValue = salaryMinFilterInput.value;
-//     const maxSalaryFilterValue = salaryMaxFilterInput.value;
+function filterData() {
+    const nameFilterValue = pNameFilter.value.toLowerCase();
+    const catFilterValue = pCatFilter.value.toLowerCase();
+    const minPriceFilterValue = pMinPriceFilter.value;
+    const maxPriceFilterValue = pMaxPriceFilter.value;
 
-//     const filteredData = datas.filter(element => {
-//         const name = element.name.toLowerCase();
-//         const surname = element.surname.toLowerCase();
-//         const salary = Number(element.salary);
+    const localStoregaItemArr = getArrFromLocalStorage('products');
 
-//         const nameMatch = name.includes(nameFilterValue);
-//         const surnameMatch = surname.includes(surnameFilterValue);
-//         const salaryMatch =
-//             (minSalaryFilterValue === '' || salary >= Number(minSalaryFilterValue)) &&
-//             (maxSalaryFilterValue === '' || salary <= Number(maxSalaryFilterValue));
+    const filteredData = localStoregaItemArr.filter(element => {
+        const name = element.name.toLowerCase();
+        const category = element.category.toLowerCase();
+        const price = Number(element.price);
 
-//         return nameMatch && surnameMatch && salaryMatch;
-//     });
+        const nameMatch = name.includes(nameFilterValue);
+        const categoryMatch = category.includes(catFilterValue);
+        const salaryMatch =
+            (minPriceFilterValue === '' || price >= Number(minPriceFilterValue)) &&
+            (maxPriceFilterValue === '' || price <= Number(maxPriceFilterValue));
 
-//     tableInner.innerHTML = '';
+        return nameMatch && categoryMatch && salaryMatch;
+    });
 
-//     filteredData.forEach((element, idx) => {
-//         tableInner.innerHTML += `<tr>
-//       <th scope="row">${idx + 1}</th>
-//       <td>${element.name}</td>
-//       <td>${element.surname}</td>
-//       <td>${element.salary}</td>
-//     </tr>`;
-//     });
-// }
+    tableInner.innerHTML = '';
+
+    filteredData.forEach((element) => {
+        tableInner.innerHTML += ` <tr>
+        <th scope="row">${element.id}</th>
+        <td> <input type="text" value="${element.name}" class="nonbordered-input" readonly></td>
+        <td><input type="text" value="${element.category}" class="nonbordered-input" readonly>
+        </td>
+        <td><input type="text" value="${element.price}" class="nonbordered-input" readonly>
+        </td>
+        <td>
+            <div class="ap-item-photo">
+                <img src="./assets/images/${element.image}" alt="">
+            </div>
+            <div class="ap-item-image-string">
+                <input type="hidden" value="${element.id}" class="nonbordered-input"
+                    readonly>
+            </div>
+        </td>
+        <td><button class="btn btn-danger" value="${element.id}">Delete</button></td>
+    </tr>`;
+    });
+}
 
 // //sort kodlari oz beynimin mehsulu deyil :D
 // //counteri ozum elemishem bilirem bele yazmaq duzgun deyil amma ki togle effecti yaratmaq ucun kreativlik :D
@@ -261,11 +294,7 @@ eventListeners();
 // }
 
 // function eventListeners() {
-//     addBtn.addEventListener('click', addToTable)
-//     nameFilterInput.addEventListener('input', filterData);
-//     surnameFilterInput.addEventListener('input', filterData);
-//     salaryMinFilterInput.addEventListener('input', filterData);
-//     salaryMaxFilterInput.addEventListener('input', filterData);
+
 //     nameSort.addEventListener('click', sortByName);
 //     surnameSort.addEventListener('click', sortBySurname);
 //     salarySort.addEventListener('click', sortBySalary);

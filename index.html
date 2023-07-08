@@ -208,7 +208,6 @@
             <div class="ap-filter-table-section d-flex pt-5">
                 <div class="col-2">
                     <div class="filters-wrapper">
-
                         <div class="filters-wrapper-inner">
                             <div class="filters-wrapper-inner-input">
                                 <h6>Name Filter</h6>
@@ -222,19 +221,21 @@
                             </div>
                             <div class="filters-wrapper-inner-input">
                                 <h6>Price Filter</h6>
-                                <input type="text" placeholder="Filter for Price" class="name-filter ap-filter-inputs">
+                                <input type="text" placeholder="Min Price" class="p-min-price-filter ap-filter-inputs">
                             </div>
-
+                            <div class="filters-wrapper-inner-input">
+                                <h6>Price Filter</h6>
+                                <input type="text" placeholder="Max-Price" class="p-max-price-filter ap-filter-inputs">
+                            </div>
+                            <button class="btn btn-danger remove-filters">Remove Filter</button>
                         </div>
-
                     </div>
-
                 </div>
                 <div class="col-10">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col"># </th>
+                                <th scope="col">ID</th>
                                 <th scope="col">Product Name <span class="pName-order">></span></th>
                                 <th scope="col">Category <span class="pCat-order">></span></th>
                                 <th scope="col">Price <span class="pPrice-order">></span></th>
@@ -245,7 +246,7 @@
                             </tr>
                         </thead>
                         <tbody class="table-group-divider table-inner">
-                            <tr>
+                            <!-- <tr>
                                 <th scope="row">${element.id}</th>
                                 <td> <input type="text" value="${element.name}" class="nonbordered-input" readonly></td>
                                 <td><input type="text" value="${element.surname}" class="nonbordered-input" readonly>
@@ -262,7 +263,7 @@
                                     </div>
                                 </td>
                                 <td><button class="btn btn-danger" value="${element.id}">Delete</button></td>
-                            </tr>
+                            </tr> -->
 
                         </tbody>
                     </table>
