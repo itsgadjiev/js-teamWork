@@ -71,7 +71,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
   }
   body main .secondMain {
     height: 1000px;
@@ -188,7 +187,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
   }
   .thirdMain .boxesOfThirdMain {
     height: 33.33%;
@@ -403,30 +401,121 @@
   }
 }
 @media only screen and (max-width: 750px) {
-  footer {
-    border: 1px solid black;
+  footer .firstSection {
+    height: 100%;
+    width: 160px;
   }
-  footer .firstSectionBoxes {
-    border: 1px solid black;
+  footer .firstSection .firstSectionBoxes {
+    height: 100%;
+    width: 100%;
   }
-  footer .firstSectionBoxes li {
+  footer .firstSection .firstSectionBoxes li {
     list-style-type: none;
     margin-left: -30px;
   }
-  footer .firstSectionBoxes li a {
+  footer .firstSection .firstSectionBoxes li a {
     text-decoration: none;
     color: rgb(119, 119, 119);
   }
-  footer .firstSectionBoxes p {
+  footer .firstSection .firstSectionBoxes p {
     margin-left: -30px;
+  }
+  footer .firstSection .fifthBox {
+    height: 70px;
+    width: 250px;
+    border: 1px solid rgb(119, 119, 119);
+  }
+  footer .firstSection .fifthBox a {
+    text-decoration: none;
+    color: black;
+  }
+  footer .firstSection .fifthBox a .boxInFifthBox {
+    height: 100%;
+    width: 100%;
+  }
+  footer .firstSection .fifthBox a .boxInFifthBox .h3Box {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  footer .firstSection .fifthBox a .boxInFifthBox .h3Box h3 {
+    font-size: 17px;
+    margin-right: 2px;
+  }
+  footer .firstSection .fifthBox a .boxInFifthBox .pBox {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  footer .firstSection .fifthBox a .boxInFifthBox .pBox h4 {
+    font-size: 15px;
+    margin-right: 2px;
+    color: rgb(119, 119, 119);
+  }
+  footer .firstSection .fifthBox a .boxInFifthBox .pBox .secondTextContinue {
+    text-decoration: underline;
   }
   footer .socialMediaIcons {
     display: flex;
     flex-direction: row;
-    margin-left: -60px;
+    margin-left: -65px;
   }
   footer .socialMediaIcons li {
     list-style-type: none;
-    margin-left: 0px;
+    margin: -15px 0 0 40px;
+  }
+  footer .socialMediaIcons li img {
+    margin-left: 30px;
+  }
+  footer .secondSection {
+    height: 26px;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  footer .secondSection ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-left: -35px;
+  }
+  footer .secondSection ul li {
+    height: 25px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+  }
+  footer .secondSection ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  footer .secondSection ul .secondLi {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
+  footer .thirdSection {
+    width: 100%;
+    height: 30px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  footer .thirdSection img {
+    height: 100%;
+    width: 30%;
+  }
+  footer .fourthSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .fourthSection p {
+    color: rgb(119, 119, 119);
+  }
+  footer .fourthSection a {
+    color: black;
   }
 }/*# sourceMappingURL=style.css.map */
