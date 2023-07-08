@@ -68,6 +68,17 @@
   display: flex;
 }
 
+.item-counter {
+  color: rgb(204, 1, 1);
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.remove-filters-main {
+  margin-top: 30px;
+  width: 85%;
+}
+
 .container-90 {
   width: 90%;
   margin: 0 auto;
@@ -87,6 +98,11 @@
 
 .adding-ap-sections {
   width: 100%;
+}
+
+.add-to-card {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .ap-filter-table-section {

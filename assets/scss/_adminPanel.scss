@@ -14,7 +14,10 @@
     width: 100%;
 }
 
-.ap-table-wrapper {}
+.add-to-card {
+    font-size: 18px;
+    cursor: pointer;
+}
 
 .ap-filter-table-section {
 
@@ -26,6 +29,8 @@
     flex-direction: column;
 
 }
+
+
 
 .ap-filter-inputs {
     border-radius: 10px;
