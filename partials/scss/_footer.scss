@@ -1,0 +1,174 @@
+footer {
+    height: 621px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .firstSection {
+        margin-top: 150px;
+        height: 198px;
+        width: 1100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .firstSectionBoxes {
+            height: 198px;
+            width: 196px;
+
+            h3 {
+                font-size: 12px;
+                margin-left: 32px;
+            }
+
+            li a {
+                text-decoration: none;
+                color: rgb(119, 119, 119);
+            }
+            a:hover {
+                text-decoration:underline;
+            }
+
+            ul li{
+                list-style-type: none;               
+            }
+
+            .socialMediaIcons {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: -10px 0 0 -33px;
+            }
+
+        }
+
+        
+        .fifthBox {
+            display: flex;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            a:hover {
+                text-decoration: none;
+                color: black;
+            }
+            
+            .boxInFifthBox:hover {
+                background-color: rgb(230, 229, 229);
+                border-radius: 2px;
+            }
+           
+            .boxInFifthBox {
+                height: 60%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                
+                .h3Box {
+                    height: 40px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                
+                    h3 {
+                        margin-left: 10px;
+                        font-size: 10px;
+                    }
+                }
+    
+                .pBox {
+                    height: 45px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+    
+                    p {
+                        margin-left: 8px;
+                        font-size: 12px;
+                    }
+                }  
+                .firstTextContinue {
+                    margin-top: -28px;
+                }
+                .secondTextContinue {
+                    margin-top: -45px;
+                    text-decoration: underline;
+                }
+            }
+
+            
+        }
+    }
+
+    .secondSection {
+        height: 26px;
+        width: 500px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            margin-left: -35px;
+            
+            
+
+            li {
+                height: 25px;
+                width: 150px;
+                display: flex;
+                justify-content: center;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+
+            .secondLi {
+                border-left: 2px solid black;
+                border-right: 2px solid black;
+            }
+        }
+    }
+
+    .thirdSection {
+        width: 200px;
+        height: 30px;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .fourthSection {
+        height: 92px;
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            height: 20px;
+            font-size: 11px;
+            color: rgb(82, 81, 81);
+            
+            a {
+                color: black;
+                font-size: 11.5px;
+            }
+        }
+    }
+}
