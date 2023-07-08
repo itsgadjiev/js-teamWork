@@ -201,10 +201,6 @@
   .thirdMain .boxesOfThirdMain .boxOfProductImg a img {
     height: 100%;
     width: 100%;
-    transition: all 0.5s ease;
-  }
-  .thirdMain .boxesOfThirdMain .boxOfProductImg a img:hover {
-    transform: scale(1.1);
   }
   .thirdMain .boxesOfThirdMain .boxOfProductImg a img:hover:not(:hover) {
     height: 100%;
