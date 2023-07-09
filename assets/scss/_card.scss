@@ -27,6 +27,10 @@
 }
 
 .offer-card-image-wrapper {
+    height: 295px;
+    display: flex;
+    align-content: center;
+
     img {
         width: 100%;
     }

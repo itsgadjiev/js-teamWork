@@ -60,16 +60,19 @@ function addToTable() {
         price: pPriceInput.value,
         Image: pImageinput.value
     };
-    items.push(inputElement);
-    localStorage.setItem('products', JSON.stringify(items));
-    itemId += 1;
-    localStorage.setItem('itemId', itemId);
-    pNameInput.value = '';
-    pCatInput.value = '';
-    pPriceInput.value = '';
-    pImageinput.value = '';
-    showData(filterTheDataForAp());
-    showDataForSelling(filterTheDataForMain());
+    if (pNameInput.value.trim().length && pCatInput.value.trim().length && pPriceInput.value.trim().length && pImageinput.value.trim().length) {
+        items.push(inputElement);
+        localStorage.setItem('products', JSON.stringify(items));
+        itemId += 1;
+        localStorage.setItem('itemId', itemId);
+        pNameInput.value = '';
+        pCatInput.value = '';
+        pPriceInput.value = '';
+        pImageinput.value = '';
+        showData(filterTheDataForAp());
+        showDataForSelling(filterTheDataForMain());
+    }
+
 
 }
 
@@ -215,7 +218,7 @@ function showData(callback) {
                 <img src="./assets/images/${element.Image + ".jpg"}" alt="">
             </div>
             <div class="ap-item-image-string">
-                <input type="hidden" value="${element.Image + ".jpg"}" class="nonbordered-input crud-image"
+                <input  value="${element.Image + ".jpg"}" class="nonbordered-input crud-image"
                     readonly>
             </div>
         </td>
@@ -255,6 +258,11 @@ function update() {
                                     item.price = tgItem.value;
                                     localStorage.setItem('products', JSON.stringify(localStoregaItemArr));
                                     console.log(item + "qiymet");
+                                    e.target.setAttribute('readonly', '');
+                                }
+                                if (tgItem.classList.contains('crud-image')) {
+                                    item.Image = tgItem.value;
+                                    localStorage.setItem('products', JSON.stringify(localStoregaItemArr));
                                     e.target.setAttribute('readonly', '');
                                 }
                             })

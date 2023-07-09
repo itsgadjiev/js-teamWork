@@ -20,6 +20,11 @@
   padding: 8px;
 }
 
+.offer-card-image-wrapper {
+  height: 295px;
+  display: flex;
+  align-content: center;
+}
 .offer-card-image-wrapper img {
   width: 100%;
 }
