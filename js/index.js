@@ -16,10 +16,8 @@ const cardSectionWrapper = document.querySelector('.fully-wrappered-cards-sectio
 const adminPanelWrapper = document.querySelector('.admin-panel-section ');
 
 adminPanelBtn.addEventListener('click', () => {
-    console.log();
     cardSectionWrapper.classList.toggle('d-none');
     adminPanelWrapper.classList.toggle('d-none');
-
 })
 /////////////////////////////////////////////////
 
@@ -153,7 +151,7 @@ function filterTheDataForMain() {
     const catFilterValue = pCatFilterMain.value.toLowerCase();
     const minPriceFilterValue = pMinPriceFilterMain.value;
     const maxPriceFilterValue = pMaxPriceFilterMain.value;
-    console.log(nameFilterValue, catFilterValue, minPriceFilterValue, maxPriceFilterValue);
+
 
     const localStoregaItemArr = getArrFromLocalStorage('products');
 
@@ -236,7 +234,6 @@ function update() {
         if (e.target.getAttribute('readonly') !== null) {
             e.target.removeAttribute('readonly');
             targettedItems.push(e.target);
-            console.log(targettedItems);
             saveBtn.forEach(saveBtn => {
                 saveBtn.addEventListener('click', function () {
                     localStoregaItemArr.forEach(item => {
@@ -297,11 +294,6 @@ function remove() {
     })
 }
 
-update();
-remove();
-eventListeners();
-showData(filterTheDataForAp());
-showDataForSelling(filterTheDataForMain());
 
 function removeFilters() {
 
@@ -319,7 +311,178 @@ function removeFilters() {
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const basketWrapper = document.querySelector('.basket-wrapper');
+const basketRedirect = document.querySelector('.basket-redirect');
+const darkBackground = document.querySelector('.dark-background');
+console.log(darkBackground);
 
+function basketToggle() {
+    basketRedirect.addEventListener('click', function (e) {
+        e.preventDefault();
+        basketWrapper.classList.toggle('d-none');
+        darkBackground.classList.toggle('d-none');
+
+    })
+}
+
+
+function turnOffBasket() {
+    document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('dark-background')) {
+            console.log("salam");
+            basketWrapper.classList.add('d-none');
+            darkBackground.classList.add('d-none');
+        }
+    })
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+update();
+remove();
+eventListeners();
+showData(filterTheDataForAp());
+showDataForSelling(filterTheDataForMain());
+turnOffBasket();
+basketToggle();
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+function addToBasket() {
+    const addToBasketIcons = document.querySelectorAll('.add-to-card');
+    addToBasketIcons.forEach(atbIcon => {
+        atbIcon.addEventListener('click', addToBasketItem);
+    });
+}
+
+function addToBasketItem(e) {
+    const itemID = Number(e.target.children[0].value);
+    const selectedItem = items.find(item => Number(item.id) === itemID);
+    let basketItems = localStorage.getItem('basketItems');
+
+    if (basketItems) {
+        basketItems = JSON.parse(basketItems);
+    } else {
+        const firstItem = {
+            productId: selectedItem.id,
+            name: selectedItem.name,
+            category: selectedItem.category,
+            price: selectedItem.price,
+            Image: selectedItem.Image,
+            itemCount: 1
+        }
+        localStorage.setItem('basketItems', JSON.stringify([firstItem]))
+    }
+
+    if (selectedItem) {
+        let needItem = basketItems.find(bksItem => Number(bksItem.productId) === Number(selectedItem.id));
+
+        if (needItem) {
+            needItem.itemCount++;
+        } else {
+            needItem = {
+                productId: selectedItem.id,
+                name: selectedItem.name,
+                category: selectedItem.category,
+                price: selectedItem.price,
+                Image: selectedItem.Image,
+                itemCount: 1
+            };
+            basketItems.push(needItem);
+        }
+
+        localStorage.setItem('basketItems', JSON.stringify(basketItems));
+        window.location.reload();
+    }
+}
+
+
+function showBasketItems() {
+    const totalBasketPrice = document.querySelector('.total-basket-price');
+    const basketWrapper = document.querySelector('.basket-wrapper');
+    let basketItems = localStorage.getItem('basketItems');
+    let subtotal = 0;
+    basketItems = JSON.parse(basketItems);
+    basketItems.forEach(element => {
+        subtotal += element.itemCount * element.price;
+
+        basketWrapper.innerHTML += `
+        <div class="basket-item-card-wrapper d-flex">
+          <div class="basket-item-card-image">
+            <img src="./assets/images/${element.Image}.jpg" alt="">
+          </div>
+          <div class="basket-item-card-inner">
+            <i class="fa-solid fa-xmark remove-from-basket">
+              <input type="hidden" value="${element.productId}">
+            </i>
+            <h5>${element.name}</h5>
+            <p>${element.category}</p>
+            <p>$${element.price} * ${element.itemCount} = ${element.price * element.itemCount}</p>
+            <div class="basket-item-counter">
+              <i class="fa-solid fa-minus"></i>
+              <input type="number" value="${element.itemCount}" readonly>
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div> 
+        </div>`;
+
+    });
+
+    totalBasketPrice.innerHTML = subtotal;
+    console.log(subtotal);
+
+    console.log(document.querySelector('.total-basket-price'));
+}
+
+function removeFromBasket() {
+    const removeFromBasketCards = document.querySelectorAll('.basket-item-card-wrapper');
+    console.log(removeFromBasketCards);
+    let basketItems = localStorage.getItem('basketItems');
+    basketItems = JSON.parse(basketItems);
+    removeFromBasketCards.forEach(card => {
+        const removeButton = card.querySelector('.remove-from-basket');
+        const productId = document.querySelector('input').value;
+        console.log(removeButton);
+        console.log(productId);
+        removeButton.addEventListener('click', function () {
+            console.log(productId);
+            const basketItem = basketItems.find(x => Number(x.productId) === Number(productId))
+            basketItems.pop(basketItem);
+            localStorage.setItem('basketItems', JSON.stringify(basketItems));
+            window.location.reload();
+        });
+    });
+}
+document.addEventListener('click', removeFromBasket);
+
+showBasketItems();
+addToBasket();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // //sort kodlari oz beynimin mehsulu deyil :D
 // //counteri ozum elemishem bilirem bele yazmaq duzgun deyil amma ki togle effecti yaratmaq ucun kreativlik :D
