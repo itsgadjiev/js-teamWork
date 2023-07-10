@@ -3,13 +3,13 @@ const secondImage = document.querySelector(".second-img");
 const rightArrowBtn = document.querySelector(".right-angle-icon");
 const leftArrowBtn = document.querySelector(".left-angle-icon");
 let previusSrc = sliderImage.src;
-let nextSrc = "./src/assets/images/second.png";
+let nextSrc = "./assets/images/slider-image.jpg";
 let isAutoPlay = true;
 
 function autoPlay() {
     if (isAutoPlay) {
-      sliderImage.classList.add("hide"); // Mevcut resmi gizle
-      secondImage.classList.add("show"); // İkinci resmi göster
+      sliderImage.classList.add("hide"); 
+      secondImage.classList.add("show"); 
   
       setTimeout(() => {
         sliderImage.classList.remove("hide");
@@ -17,7 +17,7 @@ function autoPlay() {
   
         sliderImage.src = nextSrc;
         [nextSrc, previusSrc] = [previusSrc, nextSrc];
-      }, 500); // Geçiş süresi (ms) - CSS'deki geçiş süresiyle aynı olmalı
+      }, 500); 
     }
   }
   

@@ -39,3 +39,6 @@ export const tableInner = document.querySelector('.table-inner');
 
 export const itemCounter = document.querySelector('.item-counter');
 export const mainProductsWrapperCard = document.querySelector('.main-products-wrapper-cards');
+export const header=document.querySelector('#header');
+
+export const slider=document.querySelector('.slider');

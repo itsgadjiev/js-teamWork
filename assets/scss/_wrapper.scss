@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
+.black {
+    color: black;
+}
+
+.red {
+    color: #ae4343;
+}
+
+a {
+    color: black;
+    font-family: verlag,helvetica,arial,sans-serif;
+}

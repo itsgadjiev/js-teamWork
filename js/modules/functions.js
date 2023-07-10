@@ -413,23 +413,30 @@ export function update() {
                                 if (tgItem.classList.contains('crud-name')) {
                                     item.name = tgItem.value;
                                     localStorage.setItem('products', JSON.stringify(localStoregaItemArr));
-
                                     e.target.setAttribute('readonly', '');
+    removeFilters();
+
                                 }
                                 if (tgItem.classList.contains('crud-cat')) {
                                     item.category = tgItem.value;
                                     localStorage.setItem('products', JSON.stringify(localStoregaItemArr));
                                     e.target.setAttribute('readonly', '');
+    removeFilters();
+
                                 }
                                 if (tgItem.classList.contains('crud-price')) {
                                     item.price = tgItem.value;
                                     localStorage.setItem('products', JSON.stringify(localStoregaItemArr));
                                     e.target.setAttribute('readonly', '');
+    removeFilters();
+
                                 }
                                 if (tgItem.classList.contains('crud-image')) {
                                     item.Image = tgItem.value;
                                     localStorage.setItem('products', JSON.stringify(localStoregaItemArr));
                                     e.target.setAttribute('readonly', '');
+    removeFilters();
+
                                 }
                             })
                         }
@@ -439,13 +446,13 @@ export function update() {
         }
     });
 
+
 }
 
 export function remove() {
     document.addEventListener('click', function (params) {
         const localStoregaItemArr = getArrFromLocalStorage('products');
         const removeBtns = document.querySelectorAll('.delete-btn-ap');
-
         removeBtns.forEach(removeBtn => {
             removeBtn.addEventListener('click', () => {
                 const itemId = Number(removeBtn.value);
@@ -458,6 +465,7 @@ export function remove() {
             });
         });
     });
+
 }
 
 export function basketToggle() {

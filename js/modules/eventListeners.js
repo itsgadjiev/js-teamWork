@@ -2,7 +2,7 @@
 
 import { removeFromBasket, removeFilters, addToTable, sortByName, sortByNameASC, sortByPrice, sortByPriceASC, showDataForSelling, filterTheDataForMain, filterTheDataForAp, showData } from './functions.js';
 
-import { thirdMain, secondMain, adminPanelWrapper, cardSectionWrapper, addBtn, adminPanelBtn, pNameFilter, darkBackground, basketRedirect, basketWrapper, pNameInput, pCatInput, pPriceInput, pImageinput, pCatFilter, pMinPriceFilter, pMaxPriceFilter, nameSort, nameSortAsc, priceSort, priceSortAsc, pNameFilterMain, pCatFilterMain, pMinPriceFilterMain, pMaxPriceFilterMain, removeFiltersBtn, targettedItems, tableInner } from './constants.js';
+import { slider,header,thirdMain, secondMain, adminPanelWrapper, cardSectionWrapper, addBtn, adminPanelBtn, pNameFilter, darkBackground, basketRedirect, basketWrapper, pNameInput, pCatInput, pPriceInput, pImageinput, pCatFilter, pMinPriceFilter, pMaxPriceFilter, nameSort, nameSortAsc, priceSort, priceSortAsc, pNameFilterMain, pCatFilterMain, pMinPriceFilterMain, pMaxPriceFilterMain, removeFiltersBtn, targettedItems, tableInner } from './constants.js';
 
 export function eventListeners() {
     addBtn.addEventListener('click', addToTable)
@@ -39,6 +39,9 @@ export function eventListeners() {
         secondMain.classList.toggle('d-none');
         thirdMain.classList.toggle('d-none');
         footer.classList.toggle('d-none');
+        header.classList.toggle('d-none');
+        slider.classList.toggle('d-none');
+
     })
     priceSort.addEventListener('click', sortByPrice);
     priceSortAsc.addEventListener('click', sortByPriceASC);
