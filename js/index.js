@@ -2,9 +2,8 @@
 
 
 
-// const nameSort = document.querySelector('.name-order');
-// const surnameSort = document.querySelector('.surname-order');
-// const salarySort = document.querySelector('.salary-order');
+
+
 // let nameCounter = 0;
 // let surnameCounter = 0;
 // let ageCounter = 0;
@@ -18,15 +17,7 @@ const secondMain = document.querySelector('.secondMain');
 const thirdMain = document.querySelector('.thirdMain');
 const footer = document.querySelector('#footer');
 
-adminPanelBtn.addEventListener('click', () => {
-    cardSectionWrapper.classList.toggle('d-none');
-    adminPanelWrapper.classList.toggle('d-none');
-    secondMain.classList.toggle('d-none');
-    thirdMain.classList.toggle('d-none');
-    footer.classList.toggle('d-none');
 
-
-})
 /////////////////////////////////////////////////
 
 const tableInner = document.querySelector('.table-inner');
@@ -111,6 +102,16 @@ function eventListeners() {
     removeFiltersBtn.forEach(element => {
         element.addEventListener('click', removeFilters);
     });
+    adminPanelBtn.addEventListener('click', () => {
+        cardSectionWrapper.classList.toggle('d-none');
+        adminPanelWrapper.classList.toggle('d-none');
+        secondMain.classList.toggle('d-none');
+        thirdMain.classList.toggle('d-none');
+        footer.classList.toggle('d-none');
+
+
+    })
+
 
 }
 
@@ -472,194 +473,156 @@ document.addEventListener('click', removeFromBasket);
 showBasketItems();
 addToBasket();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const nameSort = document.querySelector('.sort-by-date');
+const nameSortAsc = document.querySelector('.sort-by-date-asc');
+const priceSort = document.querySelector('.sort-by-price');
+const priceSortAsc = document.querySelector('.sort-by-price-asc');
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// //sort kodlari oz beynimin mehsulu deyil :D
-// //counteri ozum elemishem bilirem bele yazmaq duzgun deyil amma ki togle effecti yaratmaq ucun kreativlik :D
-// function sortByName() {
-//     if (nameCounter % 2 === 0) {
-//         const filteredData = datas.sort((a, b) => {
-//             const nameA = a.name.toUpperCase();
-//             const nameB = b.name.toUpperCase();
-//             if (nameA < nameB) {
-//                 return -1;
-//             }
-//             if (nameA > nameB) {
-//                 return 1;
-//             }
-//             return 0;
-//         });
-//         tableInner.innerHTML = '';
 
-//         filteredData.forEach((element, idx) => {
-//             tableInner.innerHTML += `<tr>
-//               <th scope="row">${idx + 1}</th>
-//               <td>${element.name}</td>
-//               <td>${element.surname}</td>
-//               <td>${element.salary}</td>
-//             </tr>`;
-//         });
-//         nameCounter++;
-//     } else {
-//         const filteredData = datas.sort((a, b) => {
-//             const nameA = a.name.toUpperCase();
-//             const nameB = b.name.toUpperCase();
-//             if (nameA < nameB) {
-//                 return 1;
-//             }
-//             if (nameA > nameB) {
-//                 return -1;
-//             }
-//             return 0;
-//         });
-//         tableInner.innerHTML = '';
-//         filteredData.forEach((element, idx) => {
-//             tableInner.innerHTML += `<tr>
-//               <th scope="row">${idx + 1}</th>
-//               <td>${element.name}</td>
-//               <td>${element.surname}</td>
-//               <td>${element.salary}</td>
-//             </tr>`;
-//         });
-//         nameCounter++;
+function sortByName() {
+    const filteredData = items.sort((a, b) => {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
+    mainProductsWrapperCard.innerHTML = '';
+    filteredData.forEach((element) => {
+        mainProductsWrapperCard.innerHTML += `<div class="col-3 mt-5 offer-card-col ">
+        <div class="offer-card-wrapper ">
+            <div class="offer-card-image-wrapper">
+                <img class="offer-card-image" src="./assets/images/${element.Image}.jpg"
+                    alt="a-man-with-Tshirt">
+            </div>
+            <div class="offer-card-inner-wrapper">
+                <h6 class="offer-card-brand-name pt-4"> ${element.name}</h6>
+                <p>${element.category}</p>
+            </div>
+            <div class="offer-card-price">
+                <span>$${element.price}</span><span class="px-2 secondary-span ">With Fee
+                    included</span>
 
-//     }
+                <i class="fa-solid fa-cart-shopping add-to-card" ><input type="hidden" value="${element.id}"></i>
+                
+            </div>
+        </div>
+    </div>`;
+    });
 
+}
+function sortByNameASC() {
+    const filteredData = items.sort((a, b) => {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        if (nameA < nameB) {
+            return 1;
+        }
+        if (nameA > nameB) {
+            return -1;
+        }
+        return 0;
+    });
+    mainProductsWrapperCard.innerHTML = '';
+    filteredData.forEach((element) => {
+        mainProductsWrapperCard.innerHTML += `<div class="col-3 mt-5 offer-card-col ">
+        <div class="offer-card-wrapper ">
+            <div class="offer-card-image-wrapper">
+                <img class="offer-card-image" src="./assets/images/${element.Image}.jpg"
+                    alt="a-man-with-Tshirt">
+            </div>
+            <div class="offer-card-inner-wrapper">
+                <h6 class="offer-card-brand-name pt-4"> ${element.name}</h6>
+                <p>${element.category}</p>
+            </div>
+            <div class="offer-card-price">
+                <span>$${element.price}</span><span class="px-2 secondary-span ">With Fee
+                    included</span>
 
-// }
+                <i class="fa-solid fa-cart-shopping add-to-card" ><input type="hidden" value="${element.id}"></i>
+                
+            </div>
+        </div>
+    </div>`;
+    });
 
-// function sortBySurname() {
-//     if (surnameCounter % 2 === 0) {
-//         const filteredData = datas.sort((a, b) => {
-//             const nameA = a.surname.toUpperCase();
-//             const nameB = b.surname.toUpperCase();
-//             if (nameA < nameB) {
-//                 return -1;
-//             }
-//             if (nameA > nameB) {
-//                 return 1;
-//             }
-//             return 0;
-//         });
-//         tableInner.innerHTML = '';
+}
 
-//         filteredData.forEach((element, idx) => {
-//             tableInner.innerHTML += `<tr>
-//               <th scope="row">${idx + 1}</th>
-//               <td>${element.name}</td>
-//               <td>${element.surname}</td>
-//               <td>${element.salary}</td>
-//             </tr>`;
-//         });
-//         surnameCounter++;
-//     } else {
-//         const filteredData = datas.sort((a, b) => {
-//             const nameA = a.surname.toUpperCase();
-//             const nameB = b.surname.toUpperCase();
-//             if (nameA < nameB) {
-//                 return 1;
-//             }
-//             if (nameA > nameB) {
-//                 return -1;
-//             }
-//             return 0;
-//         });
-//         tableInner.innerHTML = '';
-//         filteredData.forEach((element, idx) => {
-//             tableInner.innerHTML += `<tr>
-//               <th scope="row">${idx + 1}</th>
-//               <td>${element.name}</td>
-//               <td>${element.surname}</td>
-//               <td>${element.salary}</td>
-//             </tr>`;
-//         });
-//         surnameCounter++;
+nameSort.addEventListener('click', sortByName);
+nameSortAsc.addEventListener('click', sortByNameASC);
 
-//     }
+function sortByPrice() {
 
+    const filteredData = items.sort((a, b) => {
+        return a.price - b.price;
+    });
+    mainProductsWrapperCard.innerHTML = '';
+    filteredData.forEach((element) => {
+        mainProductsWrapperCard.innerHTML += `<div class="col-3 mt-5 offer-card-col ">
+        <div class="offer-card-wrapper ">
+            <div class="offer-card-image-wrapper">
+                <img class="offer-card-image" src="./assets/images/${element.Image}.jpg"
+                    alt="a-man-with-Tshirt">
+            </div>
+            <div class="offer-card-inner-wrapper">
+                <h6 class="offer-card-brand-name pt-4"> ${element.name}</h6>
+                <p>${element.category}</p>
+            </div>
+            <div class="offer-card-price">
+                <span>$${element.price}</span><span class="px-2 secondary-span ">With Fee
+                    included</span>
 
-// }
+                <i class="fa-solid fa-cart-shopping add-to-card" ><input type="hidden" value="${element.id}"></i>
+                
+            </div>
+        </div>
+    </div>`;
+    });
 
-// function sortBySalary() {
-//     if (ageCounter % 2 == 0) {
-//         const filteredData = datas.sort((a, b) => {
-//             return a.salary - b.salary;
-//         });
-//         tableInner.innerHTML = '';
-//         filteredData.forEach((element, idx) => {
-//             tableInner.innerHTML += `<tr>
-//               <th scope="row">${idx + 1}</th>
-//               <td>${element.name}</td>
-//               <td>${element.surname}</td>
-//               <td>${element.salary}</td>
-//             </tr>`;
-//         });
-//         ageCounter++;
-//     }
-//     else {
-//         const filteredData = datas.sort((a, b) => {
-//             return b.salary - a.salary;
-//         });
-//         tableInner.innerHTML = '';
-//         filteredData.forEach((element, idx) => {
-//             tableInner.innerHTML += `<tr>
-//               <th scope="row">${idx + 1}</th>
-//               <td>${element.name}</td>
-//               <td>${element.surname}</td>
-//               <td>${element.salary}</td>
-//             </tr>`;
-//         });
-//         ageCounter++;
+}
 
-//     }
-// }
+function sortByPriceASC() {
+
+    const filteredData = items.sort((a, b) => {
+        return b.price - a.price;
+    });
+    mainProductsWrapperCard.innerHTML = '';
+    filteredData.forEach((element) => {
+        mainProductsWrapperCard.innerHTML += `<div class="col-3 mt-5 offer-card-col ">
+        <div class="offer-card-wrapper ">
+            <div class="offer-card-image-wrapper">
+                <img class="offer-card-image" src="./assets/images/${element.Image}.jpg"
+                    alt="a-man-with-Tshirt">
+            </div>
+            <div class="offer-card-inner-wrapper">
+                <h6 class="offer-card-brand-name pt-4"> ${element.name}</h6>
+                <p>${element.category}</p>
+            </div>
+            <div class="offer-card-price">
+                <span>$${element.price}</span><span class="px-2 secondary-span ">With Fee
+                    included</span>
+
+                <i class="fa-solid fa-cart-shopping add-to-card" ><input type="hidden" value="${element.id}"></i>
+                
+            </div>
+        </div>
+    </div>`;
+    });
+
+}
+priceSort.addEventListener('click', sortByPrice);
+priceSortAsc.addEventListener('click', sortByPriceASC);
+
 // //////////////////////////////////////////////////////
 
 
-// function removeFilters() {
 
-//     tableInner.innerHTML = '';
-//     pNameInput.value = '';
-//     pCatInput.value = '';
-//     pPriceInput.value = '';
-//     pImageinput.value = '';
-//     console.log("salam");
-//     datas.forEach((element, idx) => {
-//         tableInner.innerHTML += `<tr>
-//           <th scope="row">${idx + 1}</th>
-//           <td>${element.name}</td>
-//           <td>${element.surname}</td>
-//           <td>${element.salary}</td>
-//         </tr>`;
-//     });
-// }
 
-// function eventListeners() {
 
-//     nameSort.addEventListener('click', sortByName);
-//     surnameSort.addEventListener('click', sortBySurname);
-//     salarySort.addEventListener('click', sortBySalary);
-//
-
-// }
-
-// eventListeners();
