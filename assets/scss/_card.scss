@@ -1,0 +1,135 @@
+.sort-by-section {
+    display: flex;
+    justify-content: space-around;
+
+    a {
+        color: #333;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline solid black;
+        }
+    }
+}
+
+.sort-by-input {
+    width: 20%;
+}
+
+
+
+
+.offer-card-wrapper {
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+
+}
+
+.offer-card-image-wrapper {
+    height: 295px;
+    display: flex;
+    align-content: center;
+
+    img {
+        width: 100%;
+    }
+}
+
+.offer-card-inner-wrapper {
+    p {
+        overflow: hidden;
+        font-size: 12px;
+    }
+}
+
+.offer-card-href {
+    text-decoration: none;
+    color: #333;
+
+
+    &:hover {
+        color: rgb(204, 1, 1);
+        text-decoration: underline rgb(204, 1, 1);
+
+    }
+}
+
+.offer-card-price {
+    span {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.offer-card-col {
+    position: relative;
+}
+
+.offer-card-price {
+    color: rgb(204, 1, 1);
+}
+
+// .offer-card-overlay {
+//     top: 0;
+//     left: 0;
+
+//     position: absolute;
+//     z-index: 0;
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     justify-content: center;
+
+// }
+
+// .offer-card-overlay-inner {
+//     display: flex;
+//     height: 7%;
+//     width: 92%;
+//     position: absolute;
+//     display: flex;
+//     background-color: rgba(255, 255, 255, 0.732);
+//     align-items: center;
+//     font-size: 15px;
+//     font-weight: 600;
+//     justify-content: center;
+
+//     p {
+//         margin: 0;
+//     }
+
+//     // transition: background-color 0.3s ease;
+//     &:hover {}
+
+// }
+
+.filters-wrapper {
+    padding: 10px;
+}
+
+.secondary-span {
+    color: grey;
+    font-size: 13px;
+}
+
+.classic-input {
+    width: 85%;
+    margin-top: 10px;
+}
+
+.offer-filter-oneline {
+    display: flex;
+}
+
+.item-counter {
+    color: rgb(204, 1, 1);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.remove-filters-main {
+    margin-top: 30px;
+    width: 85%;
+}

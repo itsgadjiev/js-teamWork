@@ -1,86 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./src/assets/css/style.css">
-    <script src="./src/slider.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./js/index.js" type="module" defer></script>
     <title>6pm</title>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar-container">
-            <div class="top-header d-flex">
-            <div class="logo">
-                <img class="pmLogo" src="./src/assets/images/6pm-Logo.png" alt="6pmLogo">
-            </div>
-            <div class="alert">
-                <span class="black">$100+ receives</span><span class="red">free shipping</span><a href="#">See Details</a>
-            </div>
-            <div class="contact-div">
-                <div class="contact">
-                    <div class="phone-number">
-                        <p>1-888--676-2660</p>
-                    </div>
-                    <div class="time">
-                        <p>6AM-8PM PST</p>
-                    </div>
-                </div>
-                <div class="support">
-                    <a href="#">Live Chat</a>
-                </div>
-            </div>
-            <div class="icons">
-                <div class="basket"><i class="fa-solid fa-bag-shopping"></i></div>
-                <div class="liked"><i class="fa-regular fa-heart"></i></div>
-                <div class="question"><i class="fa-sharp fa-regular fa-circle-question"></i></div>
-                <div class="profile"><i class="fa-regular fa-user"></i></div>
-            </div>
+
+    <main class="container">
+        <div class="dark-background d-none">
+
         </div>
-        <div class="nav-list d-flex">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Women's</a></li>
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">Clearance</a></li>
-                <li><a href="#">Brands</a></li>
-            </ul>
-        </div>
-        </nav>
-        <section class="search-nav d-flex">
-            <div class="search-sect-container d-flex">
-                <div class="search d-flex">
-                    <input type="search" id="searchAll" placeholder="  Search 6m.com">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div class="advert d-flex">
-                    <span class="black">Swimwear Clearance </span><span class="red">Up to 75% off MSRP! </span><a href="#">Shop Now</a>
+
+        <a href="#" class="admin-panel ">admin-panel</a>
+        <a href="" class="basket-redirect">Basket</a>
+
+        <section id="sold-cards-section">
+            <div class="fully-wrappered-cards-section ">
+                <div class="">
+                    <div class="clothing-wrapper d-flex py-5 ">
+                        <div class="col-2">
+                            <div class="filters-wrapper ">
+
+                                <h3>Men's Products</h3>
+                                <p class="item-counter"> items found</p>
+                                <h6>Narrow Choices</h6>
+
+                                <div class="offer-filter-under-section pt-3">
+                                    <h6>Name Search</h6>
+                                    <input type="text" placeholder="Enter product name "
+                                        class="form-control pName-filter-main classic-input">
+                                </div>
+                                <div class="offer-filter-under-section pt-3">
+                                    <h6>Category Search </h6>
+                                    <input type="text" placeholder="Enter product category "
+                                        class="form-control pCat-filter-main classic-input">
+                                </div>
+                                <div class="offer-filter-price pt-3">
+                                    <h6>Price Search </h6>
+
+                                    <input type="number" placeholder="Enter min price"
+                                        class="form-control p-min-price-filter-main classic-input">
+                                    <input type="number" placeholder="Enter max price"
+                                        class="form-control p-max-price-filter-main classic-input">
+
+                                </div>
+                                <button class="btn btn-danger remove-filters-main remove-filters">Remove Filter</button>
+                            </div>
+
+                        </div>
+                        <div class="col-10">
+                            <div class="sort-by-section pt-3 ">
+                                <a class="sort-by-date" href="#">A to Z</a>
+                                <a class="sort-by-date-asc" href="#">Z to A</a>
+                                <a class="sort-by-price" href="#">Lowest Price</a>
+                                <a class="sort-by-price-asc" href="#">Higest Price</a>
+                            </div>
+                            <h4 class="pt-5">Offers</h4>
+                            <div class="offer-cards-wrapper ">
+                                <div class="row main-products-wrapper-cards">
+                                    <!-- <div class="col-3 mt-5 offer-card-col ">
+                                    <div class="offer-card-wrapper ">
+                                        <div class="offer-card-image-wrapper">
+                                            <img class="offer-card-image" src="./assets/images/polo-man.jpg"
+                                                alt="a-man-with-Tshirt">
+                                        </div>
+                                        <div class="offer-card-inner-wrapper">
+                                            <h6 class="offer-card-brand-name pt-4"> POLO ASSN.</h6>
+                                            <p>Crew Neck Small Pony T-Shirt</p>
+                                        </div>
+                                        <div class="offer-card-price">
+                                            <span>$14.99</span><span class="px-2 secondary-span ">With Fee
+                                                included</span>
+    
+                                            <i class="fa-solid fa-cart-shopping add-to-card">
+                                                <input type="hidden" class="element-id-hidden-main" value="">
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                    <!-- <div class="col-3 pt-5">
+                                    <div class="offer-card-wrapper">
+                                        <a href="" class="offer-card-href">
+                                            <div class="offer-card-image-wrapper">
+                                                <img class="offer-card-image" src="./assets/images/polo-man.jpg"
+                                                    alt="a-man-with-Tshirt">
+                                            </div>
+                                            <div class="offer-card-inner-wrapper">
+                                                <h6 class="offer-card-brand-name pt-4"> POLO ASSN.</h6>
+                                                <p>Crew Neck Small Pony T-Shirt</p>
+                                            </div>
+                                            <div class="offer-card-price">
+                                                <span>$14.99</span><span class="px-2 secondary-span">With Fee
+                                                    included</span>
+                                            </div>
+                                        </a>
+    
+    
+                                    </div>
+                                </div>
+                                <div class="col-3 pt-5">
+                                    <div class="offer-card-wrapper">
+                                        <a href="" class="offer-card-href">
+                                            <div class="offer-card-image-wrapper">
+                                                <img class="offer-card-image" src="./assets/images/polo-man.jpg"
+                                                    alt="a-man-with-Tshirt">
+                                            </div>
+                                            <div class="offer-card-inner-wrapper">
+                                                <h6 class="offer-card-brand-name pt-4"> POLO ASSN.</h6>
+                                                <p>Crew Neck Small Pony T-Shirt</p>
+                                            </div>
+                                            <div class="offer-card-price">
+                                                <span>$14.99</span><span class="px-2 secondary-span">With Fee
+                                                    included</span>
+                                            </div>
+                                        </a>
+    
+    
+                                    </div>
+                                </div>
+                                <div class="col-3 pt-5">
+                                    <div class="offer-card-wrapper">
+                                        <a href="" class="offer-card-href">
+                                            <div class="offer-card-image-wrapper">
+                                                <img class="offer-card-image" src="./assets/images/polo-man.jpg"
+                                                    alt="a-man-with-Tshirt">
+                                            </div>
+                                            <div class="offer-card-inner-wrapper">
+                                                <h6 class="offer-card-brand-name pt-4"> POLO ASSN.</h6>
+                                                <p>Crew Neck Small Pony T-Shirt</p>
+                                            </div>
+                                            <div class="offer-card-price">
+                                                <span>$14.99</span><span class="px-2 secondary-span">With Fee
+                                                    included</span>
+                                            </div>
+                                        </a>
+    
+    
+                                    </div>
+                                </div>
+                                <div class="col-3 pt-5">
+                                    <div class="offer-card-wrapper">
+                                        <a href="" class="offer-card-href">
+                                            <div class="offer-card-image-wrapper">
+                                                <img class="offer-card-image" src="./assets/images/polo-man.jpg"
+                                                    alt="a-man-with-Tshirt">
+                                            </div>
+                                            <div class="offer-card-inner-wrapper">
+                                                <h6 class="offer-card-brand-name pt-4"> POLO ASSN.</h6>
+                                                <p>Crew Neck Small Pony T-Shirt</p>
+                                            </div>
+                                            <div class="offer-card-price">
+                                                <span>$14.99</span><span class="px-2 secondary-span">With Fee
+                                                    included</span>
+                                            </div>
+                                        </a>
+    
+    
+                                    </div>
+                                </div>
+                                <div class="col-3 pt-5">
+                                    <div class="offer-card-wrapper">
+                                        <a href="" class="offer-card-href">
+                                            <div class="offer-card-image-wrapper">
+                                                <img class="offer-card-image" src="./assets/images/polo-man.jpg"
+                                                    alt="a-man-with-Tshirt">
+                                            </div>
+                                            <div class="offer-card-inner-wrapper">
+                                                <h6 class="offer-card-brand-name pt-4"> POLO ASSN.</h6>
+                                                <p>Crew Neck Small Pony T-Shirt</p>
+                                            </div>
+                                            <div class="offer-card-price">
+                                                <span>$14.99</span><span class="px-2 secondary-span">With Fee
+                                                    included</span>
+                                            </div>
+                                        </a>
+    
+    
+                                    </div>
+                                </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </header>
-    <main>
 
-        <div class="slider">
-            <div class="slider-inner d-flex">
-                <div class="left-angle-icon slider-icon">
-                    <i class="fa-solid fa-angle-left"></i>
-                </div>
-                <div class="slider-item">
-                    <img src="./src/assets/images/6PM-Summer-Hero-1440x700.jpg" class="image">
-                    <img src="./src/assets/images/second.png" class="image second-img d-none">
-                </div>
-                <div class="right-angle-icon slider-icon">
-                    <i class="fa-solid fa-angle-right"></i>
+        <section id="admin-panel">
+            <div class="admin-panel-section d-none">
+                <div class="admin-panel-wrapper container">
+                    <h1 class="text-center pb-5">Admin Panel</h1>
+                    <div class="ad-inputs-wrapper">
+                        <div class="input-group ">
+                            <!-- <span class="input-group-text">Name and Category and Price and
+                            Photo</span> -->
+                            <input placeholder="Product Name" type="text" class="form-control pName-input">
+                            <input placeholder="Product Category" type="text" class="form-control pCat-input">
+                            <input placeholder="Product Price" type="number" class="form-control pPrice-input">
+                            <input placeholder="Product Photo" type="text" class="form-control pImage-input">
+                            <button class="btn btn-primary add-btn">Add</button>
+                        </div>
+                    </div>
+
+
+                    <div class="ap-filter-table-section d-flex pt-5">
+                        <div class="col-2">
+                            <div class="filters-wrapper-ap">
+                                <div class="filters-wrapper-inner">
+                                    <div class="filters-wrapper-inner-input">
+                                        <h6>Name Filter</h6>
+                                        <input type="text" placeholder="Filter for name"
+                                            class="pName-filter ap-filter-inputs">
+                                    </div>
+
+                                    <div class="filters-wrapper-inner-input">
+                                        <h6>Category Filter</h6>
+                                        <input type="text" placeholder="Filter for category"
+                                            class="pCat-filter ap-filter-inputs">
+                                    </div>
+                                    <div class="filters-wrapper-inner-input">
+                                        <h6>Price Filter</h6>
+                                        <input type="text" placeholder="Min Price"
+                                            class="p-min-price-filter ap-filter-inputs">
+                                    </div>
+                                    <div class="filters-wrapper-inner-input">
+                                        <h6>Price Filter</h6>
+                                        <input type="text" placeholder="Max-Price"
+                                            class="p-max-price-filter ap-filter-inputs">
+                                    </div>
+                                    <button class="btn btn-danger remove-filters">Remove Filter</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Product Name </th>
+                                        <th scope="col">Category </th>
+                                        <th scope="col">Price </th>
+                                        <th scope="col">Photo </th>
+                                        <th scope="col">Actions </th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider table-inner">
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+
+        <section id="basket-section ">
+            <div class="basket-wrapper d-none">
+                <p class="total-basket-price"></p>
+            </div>
+
+            <div class="remove-all-basket-items">
+
+            </div>
+        </section>
+
+        <section class="secondMain">
+            <div class="boxesOfSecondMain">
+                <div class="boxOfProductImg">
+                    <a href="#"><img src="./assets/img/slideVsSandals.jpg"></a>
+                </div>
+                <div class="boxOfProductName">
+                    <a href="#">
+                        <p>Shop Summer Slides and Sandals</p>
+                    </a>
+                </div>
+            </div>
+            <div class="boxesOfSecondMain">
+                <div class="boxOfProductImg">
+                    <a href="#"><img src="./assets/img/summerRefreshBg.jpg"></a>
+                </div>
+                <div class="boxOfProductName">
+                    <a href="#">
+                        <p>Shop Summer Refresh Bags</p>
+                    </a>
+                </div>
+            </div>
+            <div class="boxesOfSecondMain">
+                <div class="boxOfProductImg">
+                    <a href="#"><img src="./assets/img/summerSneakers.jpg"></a>
+                </div>
+                <div class="boxOfProductName">
+                    <a href="#">
+                        <p>Shop Summer Sneakers</p>
+                    </a>
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <section class="thirdMain">
+            <div class="boxesOfThirdMain">
+                <div class="boxOfProductImg">
+                    <a href="#"><img src="./assets/img/sadalsOnSale.jpg"></a>
+                </div>
+                <div class="boxOfProductName">
+                    <a href="#">
+                        <p>Sandals on Sale</p>
+                    </a>
+                </div>
+                <div class="boxOfProductNotice">
+                    <a href="#">
+                        <p>Shop Sandals Now</p>
+                    </a>
+                </div>
+            </div>
+            <div class="boxesOfThirdMain">
+                <div class="boxOfProductImg">
+                    <a href="#"><img src="./assets/img/sneakersOnSale.jpg"></a>
+                </div>
+                <div class="boxOfProductName">
+                    <a href="#">
+                        <p>Sneakers on Sale</p>
+                    </a>
+                </div>
+                <div class="boxOfProductNotice">
+                    <a href="#">
+                        <p>Shop Sneakers Now</p>
+                    </a>
+                </div>
+            </div>
+            <div class="boxesOfThirdMain">
+                <div class="boxOfProductImg">
+                    <a href="#"><img src="./assets/img/clearanceCloset.png"></a>
+                </div>
+                <div class="boxOfProductName">
+                    <a href="#">
+                        <p>All your favorite brands and styles, starting at 70% off!</p>
+                    </a>
+                </div>
+                <div class="boxOfProductNotice">
+                    <a href="#">
+                        <p>Shop Now</p>
+                    </a>
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <footer id="footer">
+            <div class="firstSection">
+                <div class="firstBox firstSectionBoxes">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Forgot Password</a></li>
+                        <li><a href="#">Shipping Rates</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">About Proposition 65</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Info</a></li>
+                    </ul>
+                </div>
+                <div class="secondBox firstSectionBoxes">
+                    <h3>Shopping</h3>
+                    <ul>
+                        <li><a href="#">Womens</a></li>
+                        <li><a href="#">Mens</a></li>
+                        <li><a href="#">Kids</a></li>
+                        <li><a href="#">Brands</a></li>
+                        <li><a href="#">e-Gift Cards</a></li>
+
+                    </ul>
+                </div>
+                <div class="thirdBox firstSectionBoxes">
+                    <h3>My Account</h3>
+                    <ul>
+                        <li><a href="#">Login/Register</a></li>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Track My Order</a></li>
+
+                    </ul>
+                </div>
+                <div class="fourthBox firstSectionBoxes">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Site Map</a></li>
+                        <li><a href="">Coupons</a></li>
+                        <p>Find us on:</p>
+                        <ul class="socialMediaIcons">
+                            <li><a href="#"><img src="./assets/icon/iconsInstagram.svg" alt="Instagram"></a></li>
+                            <li><a href="#"><img src="./assets/icon/iconsFacebook.svg" alt="Facebook"></a></li>
+                            <li><a href="#"><img src="./assets/icon/iconsTwitter.svg" alt="Twitter"></a></li>
+                            <li><a href="#"><img src="./assets/icon/iconsPinterest.svg" alt="Pinterest"></a></li>
+                            <li><a href="#"><img src="./assets/icon/iconsYoutube.svg" alt="Youtube"></a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="fifthBox firstSectionBoxes">
+
+
+                    <a href="#">
+
+                        <div class="boxInFifthBox">
+                            <div class="h3Box">
+                                <h3 class="firstText">How Do You Like Our</h3>
+                                <h3 class="firstTextContinue text-center">Website?</h3>
+                            </div>
+                            <div class="pBox">
+                                <h4 class="secondText">We'd like to get your</p>
+                                    <h4 class="secondTextContinue">feedback.</p>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+
+            </div>
+            <div class="secondSection">
+                <ul>
+                    <li class="firstLi"><a href="#">Terms Of Use</a></li>
+                    <li class="secondLi"><a href="#">Privacy Policy</a></li>
+                    <li class="thirdLi"><a href="#">Interest-Based Ads</a></li>
+                </ul>
+            </div>
+            <div class="thirdSection">
+                <img src="./assets/icon/visaMasterDiscoverAmericanExpress.PNG" alt="">
+            </div>
+            <div class="fourthSection">
+                <p>© 2009–2023 6pm.com or its affiliates</p>
+                <p>For premier service, selection, and shipping, visit <a href="https://www.zappos.com">Zappos.com</a>
+                    — your one-stop shop for the latest in <a href="https://www.zappos.com/c/shoes">Shoes</a>,
+                    <a href="#">Sandals</a>,
+                    <a href="#">Dresses</a>,
+                    <a href="#">Jeans</a> and more!
+                </p>
+                <p>For luxury and designer styles, visit <a href="#">Style Room</a>.</p>
+            </div>
+        </footer>
+
     </main>
+
+
+
 </body>
+
 </html>
