@@ -14,10 +14,18 @@
 const adminPanelBtn = document.querySelector('.admin-panel');
 const cardSectionWrapper = document.querySelector('.fully-wrappered-cards-section');
 const adminPanelWrapper = document.querySelector('.admin-panel-section ');
+const secondMain = document.querySelector('.secondMain');
+const thirdMain = document.querySelector('.thirdMain');
+const footer = document.querySelector('#footer');
 
 adminPanelBtn.addEventListener('click', () => {
     cardSectionWrapper.classList.toggle('d-none');
     adminPanelWrapper.classList.toggle('d-none');
+    secondMain.classList.toggle('d-none');
+    thirdMain.classList.toggle('d-none');
+    footer.classList.toggle('d-none');
+
+
 })
 /////////////////////////////////////////////////
 
@@ -322,6 +330,7 @@ function basketToggle() {
         basketWrapper.classList.toggle('d-none');
         darkBackground.classList.toggle('d-none');
 
+
     })
 }
 
@@ -411,6 +420,7 @@ function showBasketItems() {
     basketItems.forEach(element => {
         subtotal += element.itemCount * element.price;
 
+
         basketWrapper.innerHTML += `
         <div class="basket-item-card-wrapper d-flex">
           <div class="basket-item-card-image">
@@ -432,11 +442,10 @@ function showBasketItems() {
         </div>`;
 
     });
-
-    totalBasketPrice.innerHTML = subtotal;
+    totalBasketPrice.innerHTML = `${subtotal}`;
     console.log(subtotal);
 
-    console.log(document.querySelector('.total-basket-price'));
+
 }
 
 function removeFromBasket() {

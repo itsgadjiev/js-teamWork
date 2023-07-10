@@ -5,7 +5,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    
+
         .firstSection {
             margin: 150px 0 0 100px;
             height: 198px;
@@ -13,52 +13,56 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-    
+
             .firstSectionBoxes {
                 height: 198px;
                 width: 20%;
-    
+
                 h3 {
                     font-size: 12px;
                     margin-left: 32px;
                     width: 100%;
                 }
-    
+
                 li a {
                     text-decoration: none;
                     color: rgb(119, 119, 119);
                     width: 100%;
                 }
+
                 a:hover {
-                    text-decoration:underline;
+                    text-decoration: underline;
                 }
-    
-                ul li{
+
+                ul li {
                     list-style-type: none;
-                    height: 23px; 
-                    width: 100%;              
+                    height: 23px;
+                    width: 100%;
                 }
-    
+
                 .socialMediaIcons {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                     margin: -10px 0 0 -33px;
                 }
-    
+
             }
-    
-            
+
+
             .fifthBox {
                 height: 100px;
                 width: 250px;
                 border: 1px solid rgb(119, 119, 119);
+
                 a:hover {
-                    text-decoration:none;
+                    text-decoration: none;
                 }
+
                 a {
                     text-decoration: none;
                     color: black;
+
                     .boxInFifthBox {
                         height: 100%;
                         width: 100%;
@@ -75,14 +79,16 @@
                             h3 {
                                 width: 150px;
                                 font-size: 14px;
-                                display: inline-flex; 
-                                margin-left: 42px; 
-                                                        
+                                display: inline-flex;
+                                margin-left: 42px;
+
                             }
+
                             .firstText {
                                 margin-top: 10px;
                             }
                         }
+
                         .pBox {
                             height: 40%;
                             width: 100%;
@@ -92,75 +98,79 @@
                             h4 {
                                 font-size: 15px;
                                 margin: 10px 0 0 10px;
-                                color: rgb(119, 119, 119);;;                              
+                                color: rgb(119, 119, 119);
+                                ;
+                                ;
                             }
+
                             .secondTextContinue {
                                 text-decoration: underline;
-                            }                           
+                            }
                         }
                     }
                 }
-            }           
+            }
         }
-    
+
         .secondSection {
             height: 26px;
             width: 500px;
             margin-top: 50px;
             display: flex;
             justify-content: center;
-    
+
             ul {
                 list-style-type: none;
                 display: flex;
                 flex-direction: row;
                 margin-left: -35px;
-                
-                
-    
+
+
+
                 li {
                     height: 25px;
                     width: 150px;
                     display: flex;
                     justify-content: center;
-    
+
                     a {
                         text-decoration: none;
                         color: black;
                     }
                 }
-    
+
                 .secondLi {
                     border-left: 2px solid black;
                     border-right: 2px solid black;
                 }
             }
         }
-    
+
         .thirdSection {
             width: 200px;
             height: 30px;
             margin-top: 50px;
             display: flex;
             flex-direction: row;
-    
+
             img {
                 height: 100%;
                 width: 100%;
             }
         }
+
         .fourthSection {
             height: 92px;
             width: 700px;
             display: flex;
             flex-direction: column;
             align-items: center;
-    
+
             p {
                 height: 20px;
                 font-size: 11px;
                 color: rgb(82, 81, 81);
-                
+
                 a {
                     color: black;
                     font-size: 11.5px;
@@ -170,35 +180,41 @@
     }
 
 }
+
 @media only screen and (max-width: 750px) {
     footer {
         .firstSection {
             height: 100%;
             width: 160px;
+
             .firstSectionBoxes {
                 height: 100%;
                 width: 100%;
-    
+
                 li {
                     list-style-type: none;
                     margin-left: -30px;
-                    
+
                     a {
                         text-decoration: none;
                         color: rgb(119, 119, 119);
                     }
-                } 
+                }
+
                 p {
                     margin-left: -30px;
                 }
             }
+
             .fifthBox {
                 height: 70px;
                 width: 250px;
                 border: 1px solid rgb(119, 119, 119);
+
                 a {
                     text-decoration: none;
                     color: black;
+
                     .boxInFifthBox {
                         height: 100%;
                         width: 100%;
@@ -211,9 +227,10 @@
 
                             h3 {
                                 font-size: 17px;
-                                margin-right: 2px;                              
+                                margin-right: 2px;
                             }
                         }
+
                         .pBox {
                             height: 50%;
                             width: 100%;
@@ -223,16 +240,20 @@
                             h4 {
                                 font-size: 15px;
                                 margin-right: 2px;
-                                color: rgb(119, 119, 119);;;                              
+                                color: rgb(119, 119, 119);
+                                ;
+                                ;
                             }
+
                             .secondTextContinue {
                                 text-decoration: underline;
-                            }                           
+                            }
                         }
                     }
                 }
-            }           
-        }     
+            }
+        }
+
         .socialMediaIcons {
             display: flex;
             flex-direction: row;
@@ -244,42 +265,49 @@
 
                 img {
                     margin-left: 30px;
-                }  
+                }
             }
-        } 
+        }
+
         .secondSection {
             height: 26px;
             width: 100%;
             margin-top: 50px;
             display: flex;
-            justify-content: center; 
+            justify-content: center;
+
             ul {
                 list-style-type: none;
                 display: flex;
                 flex-direction: row;
                 margin-left: -35px;
+
                 li {
                     height: 25px;
                     width: 150px;
                     display: flex;
                     justify-content: center;
+
                     a {
                         text-decoration: none;
                         color: black;
                     }
-                }   
+                }
+
                 .secondLi {
                     border-left: 2px solid black;
                     border-right: 2px solid black;
                 }
             }
         }
+
         .thirdSection {
             width: 100%;
             height: 30px;
             margin-top: 50px;
             display: flex;
-            justify-content: center; 
+            justify-content: center;
+
             img {
                 height: 100%;
                 width: 30%;
@@ -290,12 +318,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+
             p {
                 color: rgb(119, 119, 119);
             }
+
             a {
                 color: black;
             }
         }
-    }   
+    }
 }

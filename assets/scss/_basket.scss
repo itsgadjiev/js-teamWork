@@ -1,5 +1,5 @@
 .basket-wrapper {
-    position: absolute;
+    position: fixed;
     height: 100%;
     top: 0;
     right: 0;
@@ -9,7 +9,7 @@
 }
 
 .dark-background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -26,6 +26,10 @@
         width: 100%;
         height: 100%;
     }
+}
+
+.disable-scroll {
+    overflow: hidden;
 }
 
 .basket-item-card-wrapper {
