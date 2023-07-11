@@ -2,7 +2,7 @@
 
 import { removeFromBasket, removeFilters, addToTable, sortByName, sortByNameASC, sortByPrice, sortByPriceASC, showDataForSelling, filterTheDataForMain, filterTheDataForAp, showData } from './functions.js';
 
-import { slider,header,thirdMain, secondMain, adminPanelWrapper, cardSectionWrapper, addBtn, adminPanelBtn, pNameFilter, darkBackground, basketRedirect, basketWrapper, pNameInput, pCatInput, pPriceInput, pImageinput, pCatFilter, pMinPriceFilter, pMaxPriceFilter, nameSort, nameSortAsc, priceSort, priceSortAsc, pNameFilterMain, pCatFilterMain, pMinPriceFilterMain, pMaxPriceFilterMain, removeFiltersBtn, targettedItems, tableInner } from './constants.js';
+import { slider, header, thirdMain, secondMain, adminPanelWrapper, cardSectionWrapper, addBtn, adminPanelBtn, pNameFilter, darkBackground, basketRedirect, basketWrapper, pNameInput, pCatInput, pPriceInput, pImageinput, pCatFilter, pMinPriceFilter, pMaxPriceFilter, nameSort, nameSortAsc, priceSort, priceSortAsc, pNameFilterMain, pCatFilterMain, pMinPriceFilterMain, pMaxPriceFilterMain, removeFiltersBtn, targettedItems, tableInner } from './constants.js';
 
 export function eventListeners() {
     addBtn.addEventListener('click', addToTable)
@@ -43,10 +43,23 @@ export function eventListeners() {
         slider.classList.toggle('d-none');
 
     })
-    priceSort.addEventListener('click', sortByPrice);
-    priceSortAsc.addEventListener('click', sortByPriceASC);
-    nameSort.addEventListener('click', sortByName);
-    nameSortAsc.addEventListener('click', sortByNameASC);
+    priceSort.addEventListener('click', function (e) {
+        e.preventDefault();
+        sortByPrice();
+    });
+    priceSortAsc.addEventListener('click', function (e) {
+        e.preventDefault();
+        sortByPriceASC();
+    });
+    nameSort.addEventListener('click', function (e) {
+        e.preventDefault();
+        sortByName();
+    });
+    nameSortAsc.addEventListener('click', function (e) {
+        e.preventDefault();
+        sortByNameASC();
+
+    });
 
 
 }

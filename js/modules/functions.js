@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { mainProductsWrapperCard, itemCounter, darkBackground, basketRedirect, basketWrapper, pNameInput, pCatInput, pPriceInput, pImageinput, pNameFilter, pCatFilter, pMinPriceFilter, pMaxPriceFilter, nameSort, nameSortAsc, priceSort, priceSortAsc, pNameFilterMain, pCatFilterMain, pMinPriceFilterMain, pMaxPriceFilterMain, addBtn, removeFiltersBtn, targettedItems, tableInner } from './constants.js';
+import { baskerCountMain, mainProductsWrapperCard, itemCounter, darkBackground, basketRedirect, basketWrapper, pNameInput, pCatInput, pPriceInput, pImageinput, pNameFilter, pCatFilter, pMinPriceFilter, pMaxPriceFilter, nameSort, nameSortAsc, priceSort, priceSortAsc, pNameFilterMain, pCatFilterMain, pMinPriceFilterMain, pMaxPriceFilterMain, addBtn, removeFiltersBtn, targettedItems, tableInner } from './constants.js';
 let itemId;
 let items = []
 
@@ -414,28 +414,28 @@ export function update() {
                                     item.name = tgItem.value;
                                     localStorage.setItem('products', JSON.stringify(localStoregaItemArr));
                                     e.target.setAttribute('readonly', '');
-    removeFilters();
+                                    removeFilters();
 
                                 }
                                 if (tgItem.classList.contains('crud-cat')) {
                                     item.category = tgItem.value;
                                     localStorage.setItem('products', JSON.stringify(localStoregaItemArr));
                                     e.target.setAttribute('readonly', '');
-    removeFilters();
+                                    removeFilters();
 
                                 }
                                 if (tgItem.classList.contains('crud-price')) {
                                     item.price = tgItem.value;
                                     localStorage.setItem('products', JSON.stringify(localStoregaItemArr));
                                     e.target.setAttribute('readonly', '');
-    removeFilters();
+                                    removeFilters();
 
                                 }
                                 if (tgItem.classList.contains('crud-image')) {
                                     item.Image = tgItem.value;
                                     localStorage.setItem('products', JSON.stringify(localStoregaItemArr));
                                     e.target.setAttribute('readonly', '');
-    removeFilters();
+                                    removeFilters();
 
                                 }
                             })
@@ -487,3 +487,11 @@ export function turnOffBasket() {
         }
     })
 }
+export function setBasketCount() {
+
+    let basketItems = localStorage.getItem('basketItems');
+    basketItems = JSON.parse(basketItems);
+    baskerCountMain.innerHTML = basketItems.length;
+    console.log(basketItems.length);
+}
+

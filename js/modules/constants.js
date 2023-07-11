@@ -39,6 +39,13 @@ export const tableInner = document.querySelector('.table-inner');
 
 export const itemCounter = document.querySelector('.item-counter');
 export const mainProductsWrapperCard = document.querySelector('.main-products-wrapper-cards');
-export const header=document.querySelector('#header');
+export const header = document.querySelector('#header');
 
-export const slider=document.querySelector('.slider');
+export const slider = document.querySelector('.slider');
+
+export const sliderImage = document.querySelector(".image");
+export const secondImage = document.querySelector(".second-img");
+export const rightArrowBtn = document.querySelector(".right-angle-icon");
+export const leftArrowBtn = document.querySelector(".left-angle-icon");
+
+export const baskerCountMain = document.querySelector('.basker-count-main');

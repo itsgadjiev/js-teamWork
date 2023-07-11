@@ -6,11 +6,12 @@ header {
 
     .logo {
         width: 275px;
+
         .pmLogo {
             width: 140px;
         }
     }
-    
+
 
     .alert {
         display: flex;
@@ -26,7 +27,7 @@ header {
 
         span {
             margin-left: 5px;
-            font: 700 21px verlag,helvetica,arial,sans-serif;
+            font: 700 21px verlag, helvetica, arial, sans-serif;
         }
     }
 
@@ -38,16 +39,19 @@ header {
 
     }
 
-    .contact-div {  
+    .contact-div {
         display: flex;
 
-        .contact, .support{
+        .contact,
+        .support {
             display: flex;
             flex-direction: column;
             align-items: center;
+
             .phone-number {
                 width: 148px;
             }
+
             margin-left: 30px;
         }
 
@@ -64,31 +68,50 @@ header {
         align-items: center;
         font-size: 30px;
         color: #535353;
+
         div {
             margin-left: 15px;
         }
     }
-    
+
 }
 
 .nav-list {
     justify-content: center;
     align-items: center;
     height: 50px;
+
     ul {
         display: flex;
         list-style: none;
+
         li {
             margin: 60px;
-            
+
             a {
                 text-decoration: none;
                 color: #404040;
-                font: 500 16px knockout,helvetica,arial,sans-serif;
+                font: 500 16px knockout, helvetica, arial, sans-serif;
                 letter-spacing: 1.8px;
                 text-transform: uppercase;
                 padding: 1em 0;
             }
         }
+    }
+}
+
+.fa-bag-shopping {
+    position: relative;
+
+    .basker-count-main {
+        position: absolute;
+        top: 0px;
+        right: -20px;
+        color: white;
+        background-color: #ff0000;
+        border-radius: 50%;
+        padding: 5px;
+        font-size: 10px;
+
     }
 }
